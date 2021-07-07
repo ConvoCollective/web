@@ -1,0 +1,4 @@
+- [ ] Add favicon
+- [ ] Center image on data collect page (and generally style images to be centered)
+- [ ] Update repo name to conversation construction guide
+- [ ] Apply styling in tailwind.css in the tailwind way (i.e., remove !important tags)

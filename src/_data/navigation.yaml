@@ -1,10 +1,10 @@
 ---
 items:
-  - text: Axioms
-    url: "/axioms"
+  - text: Building Blocks
+    url: "/building-blocks"
   - text: Lifecycle
     url: "/lifecycle"
   - text: Glossary
     url: "/glossary"
-  - text: Reference
-    url: "/reference"
+  - text: Contribute
+    url: "/contribute"

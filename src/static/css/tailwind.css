@@ -5,11 +5,24 @@
 /*Your Custom CSS Goes here*/
 
 h1 {
-  @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+  @apply text-4xl tracking-tighter mb-3 text-center;
+  margin-bottom: .25em !important;
+}
+
+h2 {
+  margin-top: .25em !important;
 }
 
 h3 {
   @apply text-2xl font-bold mb-3;
+}
+
+p {
+  font-family: 'Open Sans'
+}
+
+.prose p {  
+  margin-top: .25em;
 }
 
 /* Syntax Highlighting*/
