@@ -1,6 +1,6 @@
 ---
-title: Measure your model to improve accuracy
-description: Measuring the performance of your model is essential to improving accuracy and deliverig a great user experience.
+title: Modeling Lifecycle Overview
+description: How to manage a Conversational AI model.
 date: 2021-07-07
 author: John Kelvie
 tags:
@@ -9,7 +9,7 @@ tags:
 ---
 
 # Summary
-Measuring the performance of your model is essential to improving accuracy and deliverig a great user experience.
+Overview of Conversational AI modeling.
 
 # Detail
 To be defined
