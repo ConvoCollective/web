@@ -2,6 +2,8 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
+const markdownIt = require("markdown-it");
+const markdownItLinkPreview = require("markdown-it-link-preview");
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -39,6 +41,13 @@ module.exports = function (eleventyConfig) {
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+
+  let options = {
+    html: true
+  };
+  let markdownLib = markdownIt(options).use(markdownItLinkPreview);
+
+  eleventyConfig.setLibrary("md", markdownLib);
 
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
