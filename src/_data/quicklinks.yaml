@@ -1,14 +1,15 @@
 ---
 links:
-  - title: Netlify CMS
-    url: "https://www.netlifycms.org/"
-    desc: Open source content management for your Git workflow
-  - title: Eleventy
-    url: "https://www.11ty.dev/"
-    desc: Eleventy is a simpler static site generator.
-  - title: Alpine.js
-    url: "https://github.com/alpinejs/alpine"
-    desc: A minimal framework for composing JavaScript behavior in your markup.
-  - title: Tailwind CSS
-    url: "https://tailwindcss.com/"
-    desc: A utility-first CSS framework for rapidly building custom designs.
+  - title: Building Blocks
+    url: "/building-blocks"
+    desc: Core Building Blocks of Conversation Construction
+  - title: Lifecycle
+    url: "/lifecycle"
+    desc: The lifecycle for building a Conversational system
+  - title: Contribute
+    url: "/contribute"
+    desc: How to add content to this site
+  - title: Glossary
+    url: "/glossary"
+    desc: Glossary of definitions for key terms in Conversational Design and Development
+    
