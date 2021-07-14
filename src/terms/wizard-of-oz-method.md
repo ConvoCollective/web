@@ -9,8 +9,9 @@ This method helps conversational designers test their designs before they are de
 
 #### Resources  
 
-[@preview](https://github.com/junkawa/figma_jp)
+[@preview](https://uxfactor.wordpress.com/2018/11/27/voice-usability-testing-with-wizard-of-oz-lessons-learned/)
 [@preview](http://www.usabilitybok.org/wizard-of-oz)
+[@preview](https://en.wikipedia.org/wiki/Wizard_of_Oz_experiment)
 
 ---
 
