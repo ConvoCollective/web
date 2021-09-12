@@ -20,7 +20,7 @@ The building blocks are grouped by the following topics based on the conversatio
 * Design and Specification
 * User and Usability Testing
 * Development and QA
-* Ongoing Monitoring and Tuning
+* Modeling and Training
 
 # How To Add Content
 ## How to Create a Building Block (Google Docs Process)
