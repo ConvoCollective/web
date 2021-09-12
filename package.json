@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.1.0",
+    "markdown-it-link-preview": "^1.1.1",
     "postcss": "^8.2.1"
   },
   "scripts": {
