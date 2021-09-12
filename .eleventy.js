@@ -4,6 +4,8 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
+  addLinks(eleventyConfig)
+
   // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);
 
@@ -64,3 +66,30 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
   };
 };
+
+const md = require('markdown-it')();
+const defaultRender = md.renderer.rules.text
+function addLinks(eleventyConfig) {
+  let markdownIt = require("markdown-it");
+  var iterator = require('markdown-it-for-inline');
+  let options = {
+    html: true
+  };
+  
+  console.info('MD: ' + JSON.stringify(md.renderer.rules, null, 2))
+  const phrase = 'entities'
+  md.renderer.rules.text = function (tokens, idx, options, env, renderer) {
+    for (const token of tokens) {
+      if (token.content && token.content.indexOf(phrase) !== -1 && token.level === 0) {
+        console.info('Tokens: ' + JSON.stringify(tokens))
+        
+        const newContent = token.content.replace(/entities/g, '<a href="entities">entities</a>')
+        //console.info('token content: ' + token.content + ' New: ' + newContent)
+        //token.content = newContent
+        return newContent
+      }
+    }
+    return defaultRender(tokens, idx, options, env, renderer);
+  }
+  eleventyConfig.setLibrary("md", md);
+}

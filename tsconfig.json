@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "module": "commonjs",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "target": "es6",
+    "baseUrl": ".",
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/js/**/*.js"]
+}
