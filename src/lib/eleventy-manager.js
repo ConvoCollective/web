@@ -48,17 +48,10 @@ class EleventyManager {
     })
 
     // Copy Image Folder to /_site
-    eleventyConfig.addPassthroughCopy('./content/static/img')
+    eleventyConfig.addPassthroughCopy('./site/static/img')
 
     // Copy favicon to route of /_site
-    eleventyConfig.addPassthroughCopy('./content/favicon.ico')
-
-    const options = {
-      html: true
-    }
-    const markdownLib = markdownIt(options).use(markdownItLinkPreview)
-
-    eleventyConfig.setLibrary('md', markdownLib)
+    eleventyConfig.addPassthroughCopy('./site/favicon.ico')
 
     // Minify HTML
     eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
@@ -79,7 +72,8 @@ class EleventyManager {
     // So that we can use .html instead of .njk
     return {
       dir: {
-        input: 'content'
+        includes: '_includes',
+        input: 'site'
       },
       htmlTemplateEngine: 'njk'
     }
@@ -87,11 +81,12 @@ class EleventyManager {
 
   /**
    * @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig
-   * @returns {Promise<void>}
+   * @returns {void}
    */
-  async _configureMarkdown (eleventyConfig) {
-    const glossaryManager = new GlossaryManager('./terms')
-    await glossaryManager.initialize()
+  _configureMarkdown (eleventyConfig) {
+    console.info('Configure markdown')
+    const glossaryManager = new GlossaryManager('./site/terms')
+    glossaryManager.initialize()
 
     const options = {
       html: true
@@ -104,10 +99,15 @@ class EleventyManager {
     // We examine all text blocks in markdown for terms to hyperlink
     // We are overriding this default rule from markdown-it:
     //  https://github.com/markdown-it/markdown-it/blob/master/lib/renderer.js#L116
-    markdown.renderer.rules.text = function (tokens, idx, options, env, renderer) {
+    markdown.renderer.rules.text = (tokens, idx, options, env, renderer) => {
+      // console.info('Tokens: ' + JSON.stringify(tokens))
       for (const token of tokens) {
-        if (token.level === 0) {
-          return this._linkTerms(glossaryManager, token.content)
+        if (tokens.length === 1) {
+          const newContent = this._linkTerms(glossaryManager, token.content)
+          if (newContent !== token.content) {
+            console.info('Content changed: ' + newContent)
+            return newContent
+          }
         }
       }
       return defaultRender(tokens, idx, options, env, renderer)
@@ -128,7 +128,9 @@ class EleventyManager {
       const regexString = `(\\W|^)(${term.synonyms().join('|')})(\\W|$)`
       // console.info('Checking term: ' + term.name + ' regex: ' + regexString)
       const regex = new RegExp(regexString, 'gi')
-      newContent = newContent.replace(regex, `<a href="${term.name}">$&</a>`)
+      newContent = newContent.replace(regex, `$1<a href="${term.name}" 
+        onmouseenter="openPopover(event,'tooltip-example')"
+        onmouseleave="openPopover(event,'tooltip-example')">$2</a>$3`)
     }
 
     return newContent

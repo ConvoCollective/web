@@ -2,7 +2,7 @@ const ava = require('./ava-helper')
 const GlossaryManager = require('../lib/glossary-manager').GlossaryManager
 
 ava('load glossaries', async (test) => {
-  const gm = new GlossaryManager('content/terms')
+  const gm = new GlossaryManager('site/terms')
   await gm.initialize()
   const term = gm.term('entity')
   test.assert(term)

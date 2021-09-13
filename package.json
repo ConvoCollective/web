@@ -39,7 +39,7 @@
     "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open",
     "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production postcss src/static/css/tailwind.css --o _site/static/css/style.css",
     "compile": "tsc",
-    "css": "postcss src/static/css/tailwind.css --o _site/static/css/style.css --watch",
+    "css": "postcss site/static/css/tailwind.css --o _site/static/css/style.css --watch",
     "debug": "set DEBUG=* & eleventy",
     "eleventy": "eleventy --watch",
     "lint": "eslint src/**/*.js",

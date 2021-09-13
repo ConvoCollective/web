@@ -2,6 +2,7 @@
 - [ ] Shorter titles - with subtitles
 - [ ] Automatically add related section based on metadata at the end of each post
 - [ ] Automatically add tooltips based on glossary
+- [ ] Exclude matching terms within the term definition for glossary
 - [ ] Add standardjs + jsdoc
 - [ ] Add spellchecker
 - [ ] Add good link checker
