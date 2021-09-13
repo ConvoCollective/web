@@ -1,0 +1,32 @@
+name: compile
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - '**.js'
+    tags-ignore:
+      - '**'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+    
+    - name: Install Dependencies
+      run: npm install
+      
+    - name: Lint
+      run: npm run eslint
+
+    - name: Compile
+      run: npm run compile

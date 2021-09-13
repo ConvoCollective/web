@@ -2,7 +2,7 @@
   "ava": {
     "failWithoutAssertions": false,
     "files": [
-      "src/js/test/**/*.test.js"
+      "src/test/**/*.test.js"
     ]
   },
   "devDependencies": {
@@ -15,30 +15,35 @@
     "browser-sync": "^2.26.14",
     "cross-env": "^7.0.2",
     "cssnano": "^4.1.10",
+    "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-jsdoc": "^36.1.0",
     "html-minifier": "^4.0.0",
     "js-yaml": "^3.14.0",
+    "lodash": "^4.17.21",
     "luxon": "^1.25.0",
     "markdown-it-for-inline": "^0.1.1",
-    "markdown-it-front-matter": "^0.2.3",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.3.1",
     "prismjs": "^1.21.0",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
     "autoprefixer": "^10.1.0",
+    "markdown-it-front-matter": "^0.2.3",
     "markdown-it-link-preview": "^1.1.1",
     "postcss": "^8.2.1"
   },
   "scripts": {
-    "start": "npm-run-all --parallel css eleventy browsersync",
-    "eleventy": "eleventy --watch",
-    "debug": "set DEBUG=* & eleventy",
-    "css": "postcss src/static/css/tailwind.css --o _site/static/css/style.css --watch",
-    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production postcss src/static/css/tailwind.css --o _site/static/css/style.css",
     "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open",
+    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production postcss src/static/css/tailwind.css --o _site/static/css/style.css",
+    "compile": "tsc",
+    "css": "postcss src/static/css/tailwind.css --o _site/static/css/style.css --watch",
+    "debug": "set DEBUG=* & eleventy",
+    "eleventy": "eleventy --watch",
+    "lint": "eslint src/**/*.js",
+    "start": "npm-run-all --parallel css eleventy browsersync",
     "test": "ava"
   }
 }

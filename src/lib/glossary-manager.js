@@ -1,3 +1,4 @@
+const _ = require('lodash')
 const MarkdownIT = require('markdown-it')
 const Path = require('path')
 
@@ -11,6 +12,9 @@ class GlossaryManager {
    */
   constructor (baseDirectory) {
     this.baseDirectory = baseDirectory
+
+    /** @type {Object<string, GlossaryTerm>} */
+    this.terms = {}
   }
 
   /**
@@ -20,15 +24,27 @@ class GlossaryManager {
   async initialize () {
     const files = require('fs').readdirSync(this.baseDirectory)
 
-    /** @type {Object<string, Markdown>} */
-    this.terms = {}
-
     for (const termFile of files) {
-      const termName = termFile.substring(0, termFile.length - 3)
+      const termName = _.lowerCase(termFile.substring(0, termFile.length - 3))
       const fullFile = Path.join(this.baseDirectory, termFile)
-      const markdown = await this._parseFile(fullFile)
+      const markdown = await this._parseTerm(termName, fullFile)
       this.terms[termName] = markdown
     }
+  }
+
+  /**
+   * @returns {GlossaryTerm[]}
+   */
+  allTerms () {
+    /** @type {GlossaryTerm[]} */
+    const terms = []
+    for (const term of Object.keys(this.terms)) {
+      const markdown = this.terms[term]
+      if (markdown.hasContent()) {
+        terms.push(markdown)
+      }
+    }
+    return terms
   }
 
   /**
@@ -51,17 +67,18 @@ class GlossaryManager {
 
   /**
    * @param term
-   * @returns {Markdown | undefined}
+   * @returns {GlossaryTerm | undefined}
    */
   term (term) {
     return this.terms?.[term]
   }
 
   /**
+   * @param {string} term
    * @param {string} fileName
-   * @returns {Promise<Markdown>}
+   * @returns {Promise<GlossaryTerm>}
    */
-  async _parseFile (fileName) {
+  async _parseTerm (term, fileName) {
     const readFile = require('fs/promises').readFile
     /** @type {Object<string, string>} */
     const frontMatter = {}
@@ -75,23 +92,47 @@ class GlossaryManager {
 
     const contents = await readFile(fileName, 'utf-8')
     const html = markdown.render(contents)
-    return new Markdown(html, frontMatter)
+    return new GlossaryTerm(term, html, frontMatter)
   }
 }
 
 /**
  * Class to manage parsed markdown
  */
-class Markdown {
+class GlossaryTerm {
   /**
    *
+   * @param {string} name
    * @param {string} html
    * @param {Object<string, string>} frontMatter
    */
-  constructor (html, frontMatter) {
+  constructor (name, html, frontMatter) {
+    this.name = name
     this.html = html
     this.frontMatter = frontMatter
   }
+
+  /**
+   *
+   * @returns {boolean}
+   */
+  hasContent () {
+    return this.html !== undefined && this.html.trim().length > 0
+  }
+
+  /**
+   * @returns {string[]}
+   */
+  synonyms () {
+    const synonymsString = this.frontMatter.synonyms
+    const synonyms = [this.name]
+    if (synonymsString) {
+      for (const s of synonymsString.split(',')) {
+        synonyms.push(s.trim())
+      }
+    }
+    return synonyms
+  }
 }
 
-module.exports = GlossaryManager
+module.exports = { GlossaryManager, GlossaryTerm }
