@@ -21,9 +21,14 @@ p {
   font-family: 'Open Sans'
 }
 
-.prose p {
+.prose h1 {
+  text-align: left;
+}
+
+.prose p {  
   margin-top: .25em;
 }
+
 
 /* Syntax Highlighting*/
 
