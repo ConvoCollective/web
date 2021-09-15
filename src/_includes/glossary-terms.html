@@ -1,0 +1,18 @@
+---
+layout: default
+prism: true
+---
+
+<div class="container max-w-4xl mt-4 px-6">
+  <div class="pb-5 mb-5 border-b border-gray-100">
+    <h1 class="font-bold text-5xl pb-12">Conversational AI Glossary</h1>
+
+    <h2 class="font-bold text-3xl px-4">{{term}}</h2>
+  </div>
+
+  <article class="prose lg:prose-xl mx-auto">
+    <p class="italic text-gray-500">{{partOfSpeech}}.</p>
+
+    {{ content | safe }}
+  </article>
+</div>
