@@ -9,7 +9,7 @@ tags:
 ---
 
 # Definitions
-**Guide** - The Conversation Construction guide includes content that is written in markdown files managed in a Github repository, and published via the Netlify CMS. The guide will contain several types of content.  
+**Guide** - The Conversation Construction guide includes content that is written in markdown files managed in a GitHub repository, and published via the Netlify CMS. The guide will contain several types of content.  
 **Building Blocks** - Building Blocks are the first type of content being created for the guide. They describe the principles or axioms of conversational apps.  
 **Owners** - owners are responsible for creating and delivering the guide content. They can delegate content creation tasks but are ultimately responsible for delivering the content. Owners are determined by an informal consensus around which contributor has the expertise and bandwidth.  
 **Reviewers** - reviewers of content are contributors assigned to review a topic based on expertise and bandwidth.  
@@ -30,7 +30,7 @@ The building blocks are grouped by the following topics based on the conversatio
 * The reviewer sends it back to the owner for review. 
 * The owner can send it back for more reviews at their discretion, but ultimately decides when the document is complete. 
 
-## How to Create a Building Block (Github Process)
+## How to Create a Building Block (GitHub Process)
 * Fork the [repo](https://github.com/ConvoCollective/conversational-ai-guide)
 * Make your changes
 * Submit a Pull Request

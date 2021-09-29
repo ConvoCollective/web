@@ -7,7 +7,7 @@ Context refers to the way that we use language to describe things. Conversations
 	* *Mostly sunny with a high of 78 degrees and a low of 71 degrees.*
 * *How long will it take me to get **there**?*
 
-Where "**there**" is refering to Austin, TX which was established in the first question.
+Where "**there**" is referring to Austin, TX which was established in the first question.
 
 --
 #### Synonyms

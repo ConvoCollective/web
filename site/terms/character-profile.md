@@ -10,7 +10,7 @@ An example character profile.
 --
 
 #### Synonyms
-* Affinty Diagramming
+* Affinity Diagramming
 
 #### Related Terms
 * User-centered Design

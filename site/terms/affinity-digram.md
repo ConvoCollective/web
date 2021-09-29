@@ -13,7 +13,7 @@ Affinity map in progress.
 
 --
 #### Synonyms
-* Affinty Diagramming
+* Affinity Diagramming
 
 #### Related Terms
 * User-centered Design
