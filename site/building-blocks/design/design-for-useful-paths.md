@@ -36,9 +36,9 @@ An application that exposes all of the useful conversation paths to the user upf
 * Leave the user without guidance and hope for the best
 
 # Other Resources
-[Understanding Conversational Design: Voice Design Challenges](https://developer.amazon.com/en-US/alexa/alexa-skills-kit/get-deeper/tutorials-code-samples/build-multi-turn-skills-with-alexa-conversations/module-1)
+[Understanding Conversational Design: Voice Design Challenges](https://developer.amazon.com/en-US/alexa/alexa-skills-kit/get-deeper/tutorials-code-samples/build-multi-turn-skills-with-alexa-conversations/module-1)  
 [The State of Conversation Design - Designing for the Conversational Future | Rasa Summit 2021
-Conversation Design](https://www.youtube.com/watch?v=usr-klyQjyM)
-[Conversational UX Design - IBM](https://researcher.watson.ibm.com/researcher/view_group.php?id=8426)
-[Building Usable Conversations: Conversational Information Architecture](https://dev.acquia.com/blog/building-usable-conversations-conversational-information-architecture)
-[Designing Conversational UI with Information Architecture — Part 2 | by Nancy B. Duan](https://chatbotsmagazine.com/designing-conversational-ui-with-information-architecture-part-2-f636dea4cbd0#.lm9dqiq0n)
+Conversation Design](https://www.youtube.com/watch?v=usr-klyQjyM)  
+[Conversational UX Design - IBM](https://researcher.watson.ibm.com/researcher/view_group.php?id=8426)  
+[Building Usable Conversations: Conversational Information Architecture](https://dev.acquia.com/blog/building-usable-conversations-conversational-information-architecture)  
+[Designing Conversational UI with Information Architecture — Part 2 | by Nancy B. Duan](https://chatbotsmagazine.com/designing-conversational-ui-with-information-architecture-part-2-f636dea4cbd0#.lm9dqiq0n)  
