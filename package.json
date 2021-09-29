@@ -42,7 +42,7 @@
     "debug": "set DEBUG=* & eleventy",
     "eleventy": "eleventy --watch",
     "lint": "eslint src/**/*.js",
-    "spellcheck": "mdspell --en-us -n -r site/**/*.md",
+    "spellcheck": "mdspell --en-us -n -r site/**/*.md site/**/**/*.md",
     "start": "npm-run-all --parallel css eleventy browsersync",
     "test": "ava"
   }

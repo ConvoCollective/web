@@ -2,7 +2,10 @@
 links:
   - title: Building Blocks
     url: "/building-blocks"
-    desc: Core Building Blocks of Conversation Construction
+    desc: Core Building Blocks of Conversation Construction<br>
+    links:
+      - <a href='/building-blocks/design'>Design</a><br>
+      - <a href='/building-blocks/modeling'>Modeling</a>
   - title: Lifecycle
     url: "/building-blocks/modeling/modeling-lifecycle"
     desc: The lifecycle for building a Conversational system

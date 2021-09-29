@@ -28,7 +28,7 @@ In the latter case, these unclassified utterances can be valuable input to your 
 Minimally, for unclassified utterances, coming up with something better than the standard reply (which might be, "Sorry, I did not understand that") the system should say something specific and meaningful such as "Sorry, we do not currently support the ability to payoff credit cards".
 
 # Misclassified utterances
-These cases are trickier to identify. A starting point for finding them may be to look for utterances that are matched with a low confidence score or that have multiple interpretations, one or more which could be properly assigned to a different intent or entity (note that confidence scores and alternative interpretatios are common features of most modern ASR and NLU platforms).
+These cases are trickier to identify. A starting point for finding them may be to look for utterances that are matched with a low confidence score or that have multiple interpretations, one or more which could be properly assigned to a different intent or entity (note that confidence scores and alternative interpretations are common features of most modern ASR and NLU platforms).
 
 In cases where the confidence is low, if this is a bot that supports voice, we may go in and listen to the actual recording to see what the user really said and decide what the proper classification should have been.
 
