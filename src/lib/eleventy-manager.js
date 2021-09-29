@@ -1,8 +1,7 @@
 const DateTime = require('luxon').DateTime
+const GlossaryTerm = require('./glossary-manager').GlossaryTerm
 const GlossaryManager = require('./glossary-manager').GlossaryManager
 const htmlmin = require('html-minifier')
-const markdownIt = require('markdown-it')
-const markdownItLinkPreview = require('markdown-it-link-preview')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const yaml = require('js-yaml')
 
@@ -42,9 +41,9 @@ class EleventyManager {
 
     // Copy Static Files to /_Site
     eleventyConfig.addPassthroughCopy({
-      './src/admin/config.yml': './admin/config.yml',
       './node_modules/alpinejs/dist/alpine.js': './static/js/alpine.js',
-      './node_modules/prismjs/themes/prism-tomorrow.css': './static/css/prism-tomorrow.css'
+      './node_modules/prismjs/themes/prism-tomorrow.css': './static/css/prism-tomorrow.css',
+      './src/admin/config.yml': './admin/config.yml'
     })
 
     // Copy Image Folder to /_site
@@ -58,9 +57,9 @@ class EleventyManager {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
       if (outputPath.endsWith('.html')) {
         const minified = htmlmin.minify(content, {
-          useShortDoctype: true,
+          collapseWhitespace: true,
           removeComments: true,
-          collapseWhitespace: true
+          useShortDoctype: true
         })
         return minified
       }
@@ -103,9 +102,9 @@ class EleventyManager {
       // console.info('Tokens: ' + JSON.stringify(tokens))
       for (const token of tokens) {
         if (tokens.length === 1) {
-          const newContent = this._linkTerms(glossaryManager, token.content)
+          const newContent = this._linkContent(glossaryManager, token.content)
           if (newContent !== token.content) {
-            console.info('Content changed: ' + newContent)
+            // console.info('Content changed: ' + newContent)
             return newContent
           }
         }
@@ -119,21 +118,108 @@ class EleventyManager {
    *
    * @param {GlossaryManager} manager
    * @param {string} content
-   * @returns {string | undefined}
+   * @returns {string}
    */
-  _linkTerms (manager, content) {
+  _linkContent (manager, content) {
     const terms = manager.allTerms()
-    let newContent = content
+
+    let hyperlinkedContent = ''
+    let unlinkedBuffer = ''
+    const words = content.split(' ')
+    for (let i = 0; i < words.length; i++) {
+      unlinkedBuffer += words[i]
+      if (i < words.length - 1) {
+        unlinkedBuffer += ' '
+      }
+      const linkedBuffer = this._replaceTerms(terms, unlinkedBuffer)
+      if (linkedBuffer !== unlinkedBuffer) {
+        hyperlinkedContent += linkedBuffer
+        unlinkedBuffer = ''
+      }
+    }
+    hyperlinkedContent += unlinkedBuffer
+    return hyperlinkedContent
+  }
+
+  /**
+    *@param {GlossaryTerm[]} terms
+   * @param {string} contentSection
+   * @returns {string}
+   */
+  _replaceTerms (terms, contentSection) {
+    const originalContentSection = contentSection
     for (const term of terms) {
       const regexString = `(\\W|^)(${term.synonyms().join('|')})(\\W|$)`
       // console.info('Checking term: ' + term.name + ' regex: ' + regexString)
       const regex = new RegExp(regexString, 'gi')
-      newContent = newContent.replace(regex, `$1<a href="${term.name}" 
-        onmouseenter="openPopover(event,'tooltip-example')"
-        onmouseleave="openPopover(event,'tooltip-example')">$2</a>$3`)
+      const escapedContent = this._escapeHTML(term.html).replace(/\n/g, ' ')
+      // console.info('contentsection: ' + contentSection)
+      contentSection = contentSection.replace(regex, `$1<a href="javascript:tooltip('${term.name}')" 
+        class="tooltip"
+        data-glossary="${escapedContent}">$2</a>$3`)
+      if (originalContentSection !== contentSection) {
+        return contentSection
+      }
+    }
+    return contentSection
+  }
+  /**
+ * Escape special characters in the given string of text.
+ *
+ * @param  {string} s The string to escape for inserting into HTML
+ * @return {string}
+ */
+
+  /**
+   * @param {string} s
+   * @returns {string}
+   */
+  _escapeHTML (s) {
+    const matchHtmlRegExp = /["'&<>]/
+    const str = '' + s
+    const match = matchHtmlRegExp.exec(str)
+
+    if (!match) {
+      return str
     }
 
-    return newContent
+    let escape
+    let html = ''
+    let index = 0
+    let lastIndex = 0
+
+    for (index = match.index; index < str.length; index++) {
+      switch (str.charCodeAt(index)) {
+        case 34: // "
+          escape = '&quot;'
+          break
+        case 38: // &
+          escape = '&amp;'
+          break
+        case 39: // '
+          escape = '&#39;'
+          break
+        case 60: // <
+          escape = '&lt;'
+          break
+        case 62: // >
+          escape = '&gt;'
+          break
+        default:
+          continue
+      }
+
+      if (lastIndex !== index) {
+        html += str.substring(lastIndex, index)
+      }
+
+      lastIndex = index + 1
+      html += escape
+    }
+
+    return lastIndex !== index
+      ? html + str.substring(lastIndex, index)
+      : html
   }
 }
 

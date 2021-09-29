@@ -4,13 +4,15 @@
     </small>
         <!-- Required popper.js -->
     <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <script>
-        function openPopover(event, tooltipID) {
-            let element = event.target;
-            var popper = Popper.createPopper(element, document.getElementById(tooltipID), {
-                placement: 'top'
+        for (const element of document.getElementsByClassName('tooltip')) {
+            const glossaryDefinition = element.getAttribute('data-glossary')
+            tippy(element, {
+                allowHTML: true,
+                content: `<div class="glossary">${glossaryDefinition}</div>`,
+                trigger: 'mouseenter'
             });
-            document.getElementById(tooltipID).classList.toggle("hidden");
         }
     </script>
     <div class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg" id="tooltip-example">

@@ -4,7 +4,7 @@ links:
     url: "/building-blocks"
     desc: Core Building Blocks of Conversation Construction
   - title: Lifecycle
-    url: "/lifecycle"
+    url: "/building-blocks/modeling/modeling-lifecycle"
     desc: The lifecycle for building a Conversational system
   - title: Contribute
     url: "/contribute"

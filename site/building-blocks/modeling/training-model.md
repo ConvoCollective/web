@@ -36,7 +36,7 @@ Both are valid techniques for fixing this sort of error. When available, we tend
 
 If we adjust our training data at the acoustic level, we can clearly distinguish between cases where the user says "Marie" and "Mariah".
 
-Once a model is trained, the next step is to [re-test it](/building-blocks/modeling/measuring-accuracy) to ensure the changes have had the intended effect, as well as minimal side-effects. If the results are good, it can be put into production where it should be [monitored on an ongoig basis](/building-blocks/modeling/monitoring-interactions).
+Once a model is trained, the next step is to [re-test it](/building-blocks/modeling/measuring-accuracy) to ensure the changes have had the intended effect, as well as minimal side-effects. If the results are good, it can be put into production where it should be [monitored on an ongoing basis](/building-blocks/modeling/monitoring-interactions).
 
 
 

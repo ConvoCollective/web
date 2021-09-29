@@ -7,8 +7,8 @@ ava('replaces terms in sentence', async (test) => {
   const glossaryManager = new GlossaryManager('./site/terms')
 
   await glossaryManager.initialize()
-  const newString = eleventyManager._linkTerms(glossaryManager, 'Chatbot uses entities')
-  test.is(newString, '<a href="chatbot">Chatbot</a> uses <a href="entity">entities</a>')
+  const newString = eleventyManager._linkContent(glossaryManager, 'Chatbot uses entities')
+  test.assert(newString?.includes('data-glossary'))
 })
 
 ava('does not replace terms that are partial matches', async (test) => {
@@ -16,6 +16,16 @@ ava('does not replace terms that are partial matches', async (test) => {
   const glossaryManager = new GlossaryManager('./site/terms')
 
   await glossaryManager.initialize()
-  const newString = eleventyManager._linkTerms(glossaryManager, 'Chatbotter')
+  const newString = eleventyManager._linkContent(glossaryManager, 'Chatbotter')
   test.is(newString, 'Chatbotter')
+})
+
+ava('does not replace terms inside the glossary', async (test) => {
+  const eleventyManager = new EleventyManager()
+  const glossaryManager = new GlossaryManager('./site/terms')
+
+  await glossaryManager.initialize()
+  const newString = eleventyManager._linkContent(glossaryManager, 'entities')
+  // natural language understanding should NOT be linked
+  test.assert(newString.includes('with natural language understanding (NLU)'))
 })

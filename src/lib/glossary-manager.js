@@ -67,7 +67,7 @@ class GlossaryManager {
   }
 
   /**
-   * @param term
+   * @param {string} term
    * @returns {GlossaryTerm | undefined}
    */
   term (term) {
