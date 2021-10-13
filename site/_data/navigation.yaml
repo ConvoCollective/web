@@ -3,7 +3,7 @@ items:
   - text: Building Blocks
     url: "/building-blocks"
   - text: Lifecycle
-    url: "/lifecycle"
+    url: "/building-blocks/modeling/modeling-lifecycle"
   - text: Glossary
     url: "/glossary"
   - text: Contribute

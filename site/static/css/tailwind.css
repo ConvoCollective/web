@@ -4,6 +4,12 @@
 
 /*Your Custom CSS Goes here*/
 
+a.tooltip {
+  color: blue;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 h1 {
   @apply text-4xl tracking-tighter mb-3 text-center;
   margin-bottom: .25em !important;
@@ -19,6 +25,21 @@ h3 {
 
 p {
   font-family: 'Open Sans'
+}
+
+.glossary h1 {
+  font-weight: 800;
+  font-size: 1.5em;
+  margin-bottom: .1em !important;
+}
+
+.glossary h2 {
+  font-weight: 600;
+  padding-top: 0.2em;
+}
+
+.glossary p {
+  padding-top: 0.5em;
 }
 
 .prose h1 {
@@ -135,4 +156,3 @@ body pre[class*="language-"] {
   -webkit-box-flex: 0;
   flex: 0;
 }
-

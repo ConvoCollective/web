@@ -1,0 +1,3 @@
+{
+  "extends": "@typesafejs/eslint-config"
+}

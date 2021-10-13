@@ -1,0 +1,25 @@
+<footer class="{{ 'fixed' if path == 'home' }} bottom-0 text-center w-full py-4">
+    <small class="text-gray-500">Copyright ©
+        {{settings.name}}
+    </small>
+        <!-- Required popper.js -->
+    <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script>
+        for (const element of document.getElementsByClassName('tooltip')) {
+            const glossaryDefinition = element.getAttribute('data-glossary')
+            tippy(element, {
+                allowHTML: true,
+                content: `<div class="glossary">${glossaryDefinition}</div>`,
+                trigger: 'mouseenter'
+            });
+        }
+    </script>
+    <div class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg" id="tooltip-example">
+        <div>
+        <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+            Hi. I am tooltip.
+        </div>
+        </div>
+    </div>
+</footer>
