@@ -28,7 +28,7 @@ $('img[usemap]').mapster({
 </script>
 
 The complete lifecycle for managing your Conversational AI model includes:
-* [Collecting Data](/building-blocks/modeling/collecting-data): Gather utterances representive of what real users say
+* [Collecting Data](/building-blocks/modeling/collecting-data): Gather utterances representative of what real users say
 * [Measuring Accuracy](/building-blocks/modeling/measuring-accuracy): Measure the system to see how well it is performing and where it is having problems
 * [Training The Model](/building-blocks/modeling/training-model): Make changes to the model to address errors identified via testing and monitoring
 * [Monitoring Interactions](/building-blocks/modeling/monitoring-interactions): Once the model is trained and put in production, it must be monitored on an ongoing basis to see how real users interact - figuring out what works and what does not.

@@ -67,6 +67,16 @@ class EleventyManager {
       return content
     })
 
+    // We do some pre-processing on our terms collection
+    eleventyConfig.addCollection('term', function (collectionApi) {
+      return collectionApi.getFilteredByGlob('**/terms/*.md').filter(t => {
+        // console.info('filtering: ' + t.inputPath + ' title: ' + JSON.stringify(t.data.title))
+        return t.data.title !== undefined
+      }).sort(function (a, b) {
+        return b.data.title.localeCompare(a.data.title)
+      })
+    })
+
     // Let Eleventy transform HTML files as nunjucks
     // So that we can use .html instead of .njk
     return {
