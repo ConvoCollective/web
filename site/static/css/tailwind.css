@@ -4,6 +4,10 @@
 
 /*Your Custom CSS Goes here*/
 
+body {
+  font-size: 18px;
+}
+
 /* Navbar */
 nav a.join {
   background-color: rgb(182, 49, 121);
@@ -32,7 +36,8 @@ h3 {
 }
 
 p {
-  font-family: 'Open Sans'
+  font-family: 'Open Sans';
+  font-size: 18px;
 }
 
 .glossary h1 {
@@ -51,11 +56,13 @@ p {
 }
 
 .prose h1 {
+  margin-top: 1em;
   text-align: left;
 }
 
 .prose p {
   margin-top: .25em;
+  line-height: 32px;
 }
 
 
