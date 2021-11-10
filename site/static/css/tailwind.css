@@ -4,6 +4,14 @@
 
 /*Your Custom CSS Goes here*/
 
+/* Navbar */
+nav a.join {
+  background-color: rgb(182, 49, 121);
+  font-weight: bold;
+  padding: 10px 20px;
+}
+/* ------ */
+
 a.tooltip {
   color: blue;
   font-weight: 600;
@@ -46,7 +54,7 @@ p {
   text-align: left;
 }
 
-.prose p {  
+.prose p {
   margin-top: .25em;
 }
 
