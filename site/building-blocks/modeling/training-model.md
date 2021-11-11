@@ -9,7 +9,7 @@ tags:
   - modeling
 ---
 
-Training is a complex subject, and depending on your role, may means different things.
+Training is a complex subject, and depending on your role, may mean different things.
 
 Fundamentally, though, every speech recognition (ASR) and natural language (NLU) system provides a model or models (we say models because in many cases, there may be more than one). 
 
