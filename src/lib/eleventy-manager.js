@@ -77,9 +77,8 @@ class EleventyManager {
       })
     })
 
-    // We do some pre-processing on our terms collection
+    // Allow sorting of collections alphabetically
     eleventyConfig.addFilter('alphabetical', (items) => {
-      console.info('item count: ' + items.length)
       return items.sort((a, b) => {
         return a.data.title.toLowerCase() - b.data.title.toLowerCase()
       })
