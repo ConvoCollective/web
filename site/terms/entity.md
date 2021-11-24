@@ -1,5 +1,5 @@
 ---
-title: entity
+title: Entity
 synonyms: entities, entity recognition
 ---
 # What is an Entity?

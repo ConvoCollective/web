@@ -9,16 +9,16 @@ tags:
   - modeling
 ---
 
-Training is a complex subject, and depending on your role, may means different things.
+Training is a complex subject, and depending on your role, may mean different things.
 
 Fundamentally, though, every speech recognition (ASR) and natural language (NLU) system provides a model or models (we say models because in many cases, there may be more than one). 
 
 # Speech Recognition Training
 For speech recognition systems, the types of models include:
 * Acoustic model - the acoustic model determines how raw audio is transformed into phonetics
-* Language model - the language model determins how phonetics are turned into words
+* Language model - the language model determines how phonetics are turned into words
 
-The language model is often also referred to as a "grammar". A simple illustration of how the same phonetic may be interpreted differently is the sound "K" - in english, if someone says "K" we assume they mean the letter. In spanish, we assume they mean the word "que". Our language model determine how we map that phonetic to specific words.
+The language model is often also referred to as a "grammar". A simple illustration of how the same phonetic may be interpreted differently is the sound "K" - in english, if someone says "K" we assume they mean the letter. In Spanish, we assume they mean the word "que". Our language model determine how we map that phonetic to specific words.
 
 The acoustic model is more subtle, but analyzes raw audio to derive how sounds map to phonetics. Training a model on acoustic data typically involves uploaded audio files with transcriptions of what is said. The system then uses this to derive the acoustic model as well as the language model as well from this single source of training data.
 
@@ -32,7 +32,7 @@ For platforms such as Amazon Lex and Google Dialogflow, there is no distinction 
 
 If we had access to the acoustic model within Amazon Lex, we might instead add the raw audio that is being misunderstood with the transcript "Marie Curie". 
 
-Both are valid techniques for fixing this sort of error. When available, we tend to prefer fixing errors at the lowest level of the model available to us. That is because, if we take the example above, if we tell the system everytime it hears "Mariah Carey" to change it for "Marie Curie", this could lead to errors when the user actually did say "Mariah Carey". This scenario may seem a bit silly, but real world cases like this occur all the time.
+Both are valid techniques for fixing this sort of error. When available, we tend to prefer fixing errors at the lowest level of the model available to us. That is because, if we take the example above, if we tell the system every time it hears "Mariah Carey" to change it for "Marie Curie", this could lead to errors when the user actually did say "Mariah Carey". This scenario may seem a bit silly, but real world cases like this occur all the time.
 
 If we adjust our training data at the acoustic level, we can clearly distinguish between cases where the user says "Marie" and "Mariah".
 

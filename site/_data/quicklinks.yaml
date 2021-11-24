@@ -2,14 +2,35 @@
 links:
   - title: Building Blocks
     url: "/building-blocks"
-    desc: Core Building Blocks of Conversation Construction
+    image: /static/img/BuildingBlocks.png
+    desc: Core Building Blocks of Conversation Construction<br>
+    links:
+      - url: /building-blocks/design
+        name: Design
+      - url: /building-blocks/modeling
+        name: Modeling
+
   - title: Lifecycle
+    image: /static/img/Lifecycle.png
     url: "/building-blocks/modeling/modeling-lifecycle"
     desc: The lifecycle for building a Conversational system
+    links:
+      - url: /building-blocks/modeling/collecting-data
+        name: Collect
+      - url: /building-blocks/modeling/measuring-accuracy
+        name: Measure
+      - url: /building-blocks/modeling/training-model
+        name: Train
+      - url: /building-blocks/modeling/monitoring-interactions
+        name: Monitor
+
   - title: Contribute
+    image: /static/img/Contribute.jpg
     url: "/contribute"
     desc: How to add content to this site
+
   - title: Glossary
+    image: /static/img/Dictionary.png
     url: "/glossary"
     desc: Glossary of definitions for key terms in Conversational Design and Development
     

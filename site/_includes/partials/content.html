@@ -1,15 +1,52 @@
-<div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-4 my-8 px-4 lg:mx-0">
-    
+<ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 py-4">
     {% if quicklinks.links %}
 
         {% for item in quicklinks.links %}
-            <a href="{{item.url}}" target="_blank" class="p-5 border rounded border-gray-200 hover:border-purple-400">
-                <h3>{{item.title}}
-                    →</h3>
-                <p>{{item.desc}}</p>
-            </a>
+            {% if item.links %}
+                <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
+                    <a href='{{ item.url }}' >
+                        <div class="w-full flex items-center justify-between p-6 space-x-6">
+                            <div class="flex-1 truncate">
+                                <div class="flex items-center space-x-3">
+                                    <h3 class="text-gray-900 truncate">{{item.title}}</h3>
+                                </div>
+                                <p class="mt-1 text-gray-500 text-sm">{{ item.desc | safe }}</p>
+                            </div>
+                            <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="{{ item.image }}" alt="">
+                        </div>
+                    </a>
+                    <div>
+                        <div class="-mt-px flex divide-x divide-gray-200">
+                        {% for link in item.links %}    
+                            
+                                <div class="w-0 flex-1 flex">
+                                    <a href="{{ link.url }}" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                                        <!-- Heroicon name: solid/mail -->
+                                        <span class="ml-3">{{ link.name }}</span>
+                                    </a>
+                                </div>
+                            
+                        {% endfor %} 
+                        </div>
+                    </div>
+                </li>
+            {% else %}
+                <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
+                    <a href='{{ item.url }}' >
+                        <div class="w-full flex items-center justify-between p-6 space-x-6">
+                            <div class="flex-1 truncate">
+                                <div class="flex items-center space-x-3">
+                                    <h3 class="text-gray-900 truncate">{{item.title}}</h3>
+                                </div>
+                                <p class="mt-1 text-gray-500 text-sm">{{ item.desc | safe }}</p>
+                            </div>
+                            <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="{{ item.image }}" alt="">
+                        </div>
+                    </a>
+                </li>
+            {% endif %}
         {% endfor %}
 
     {% endif %}
-
-</div>
+</ul>
+  
