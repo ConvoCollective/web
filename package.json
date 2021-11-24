@@ -47,5 +47,5 @@
     "start": "npm-run-all --parallel css eleventy browsersync",
     "test": "ava"
   },
-  "version": "0.1.2"
+  "version": "0.3.0"
 }
