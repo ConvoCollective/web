@@ -5,6 +5,8 @@ links:
     image: /static/img/BuildingBlocks.png
     desc: Core Building Blocks of Conversation Construction<br>
     links:
+      - url: /building-blocks/research
+        name: Research
       - url: /building-blocks/design
         name: Design
       - url: /building-blocks/modeling

@@ -1,6 +1,6 @@
 ---
 title: Monitoring model performance to identify issues and improve user satisfaction
-description: Monitoring model performance to identify issues and improve user satisfaction
+description: Monitor model performance to identify issues and improve user satisfaction
 topic: 🚂Modeling & Training
 owner: John Kelvie
 layout: posts
