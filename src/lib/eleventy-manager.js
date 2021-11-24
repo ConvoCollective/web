@@ -77,6 +77,14 @@ class EleventyManager {
       })
     })
 
+    // We do some pre-processing on our terms collection
+    eleventyConfig.addFilter('alphabetical', (items) => {
+      console.info('item count: ' + items.length)
+      return items.sort((a, b) => {
+        return a.data.title.toLowerCase() - b.data.title.toLowerCase()
+      })
+    })
+
     // Let Eleventy transform HTML files as nunjucks
     // So that we can use .html instead of .njk
     return {
