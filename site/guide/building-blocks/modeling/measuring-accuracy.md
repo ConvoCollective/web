@@ -22,4 +22,4 @@ Additionally, there may be classification behavior that is done outside the ASR/
 
 Testing components in isolation is referred to as "component testing" or "unit-testing". Testing the system as a whole is referred to as "end-to-end testing" or "system testing".
 
-The data used in testing comes from the [data collection](/building-blocks/modeling/collecting-data) step.
+The data used in testing comes from the [data collection](/guide/building-blocks/modeling/collecting-data) step.

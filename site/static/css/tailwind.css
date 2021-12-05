@@ -9,7 +9,7 @@ body {
 }
 
 /* Navbar */
-nav a.join {
+nav a.join, a.join {
   background-color: rgb(182, 49, 121);
   font-weight: bold;
   padding: 10px 20px;

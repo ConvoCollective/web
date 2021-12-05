@@ -8,7 +8,7 @@ tags:
   - building_block
   - modeling
 ---
-As critical as all these steps are that are part of the [modeling lifecycle](/building-blocks/modeling/modeling-lifecycle), monitoring may be the most critical.
+As critical as all these steps are that are part of the [modeling lifecycle](/guide/building-blocks/modeling/modeling-lifecycle), monitoring may be the most critical.
 
 Because this is the stage where you keep an eye on what real users are saying, and how well your system is understanding and responding to them.
 
