@@ -1,9 +1,7 @@
 ---
 items:
-  - text: Building Blocks
-    url: "/building-blocks"
-  - text: Lifecycle
-    url: "/building-blocks/modeling/modeling-lifecycle"
+  - text: Guide
+    url: "/guide"
   - text: Glossary
     url: "/glossary"
   - text: Contribute
