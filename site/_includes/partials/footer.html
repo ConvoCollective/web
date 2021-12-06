@@ -1,26 +1,31 @@
 <footer class="{{ 'fixed' if path == 'home' }} bottom-0 text-center w-full py-4 clear-both" style="position: relative;">
-    <div class="sponsors text-gray-500">
-      This guide exists thanks to the contributions and support of our wonderful sponsors:
+    {% if '/guide' in page.url %}
+      <div class="sponsors text-gray-500">
+        This Conversation Construction guide exists thanks to the contributions and support of our wonderful sponsors:
 
-      <div class="logos">
-        <a href="https://bespoken.io" target="_blank" title="Bespoken">
-          <img src="/static/img/bespoken-logo.png" alt="Bespoken" />
-        </a>
+        <div class="logos">
+          <a href="https://bespoken.io" target="_blank" title="Bespoken">
+            <img src="/static/img/bespoken-logo.png" alt="Bespoken" />
+          </a>
 
-        <a href="https://opendialog.ai" target="_blank" title="OpenDialog">
-          <img src="/static/img/open-dialog-logo.png" alt="OpenDialog" />
-        </a>
+          <a href="https://opendialog.ai" target="_blank" title="OpenDialog">
+            <img src="/static/img/open-dialog-logo.png" alt="OpenDialog" />
+          </a>
 
-        <a href="https://voxable.io" target="_blank" title="Voxable">
-          <img src="/static/img/voxable-logo.png" alt="Voxable" />
-        </a>
+          <a href="https://voxable.io" target="_blank" title="Voxable">
+            <img src="/static/img/voxable-logo.png" alt="Voxable" />
+          </a>
+        </div>
       </div>
-    </div>
+    {% endif %}
+
     <small class="text-gray-500">Copyright ©
         {{settings.name}}
     </small>
 
-    <img src="/static/img/by-sa-.png" />
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+      <img src="/static/img/by-sa.png" alt="Creative Commons by-SA logo" class="ml-4" style="height: 40px;" />
+    </a>
 
     <a class="text-gray-500 text-sm"
        style="position: absolute; right: 15px; bottom: 15px;"
