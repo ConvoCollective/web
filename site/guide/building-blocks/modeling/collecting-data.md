@@ -25,4 +25,4 @@ As the amount of data grows, there is a divergence between test data and trainin
 
 ![DomainPercentageByStage](/static/img/domain-percentage-by-stage.png)
 
-At every stage, the data collected is used to [measure](/building-blocks/modeling/measuring-accuracy.md) and train the model to improve its accuracy. 
+At every stage, the data collected is used to [measure](/guide/building-blocks/modeling/measuring-accuracy.md) and train the model to improve its accuracy. 

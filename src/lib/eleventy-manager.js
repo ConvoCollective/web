@@ -77,6 +77,14 @@ class EleventyManager {
       })
     })
 
+    // Allow sorting of collections alphabetically
+    eleventyConfig.addFilter('alphabetical', (items) => {
+      const sortedItems = items.sort((a, b) => {
+        return a.data.title.toLowerCase().localeCompare(b.data.title.toLowerCase())
+      })
+      return sortedItems
+    })
+
     // Let Eleventy transform HTML files as nunjucks
     // So that we can use .html instead of .njk
     return {

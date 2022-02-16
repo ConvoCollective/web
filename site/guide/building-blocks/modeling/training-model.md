@@ -9,7 +9,7 @@ tags:
   - modeling
 ---
 
-Training is a complex subject, and depending on your role, may means different things.
+Training is a complex subject, and depending on your role, may mean different things.
 
 Fundamentally, though, every speech recognition (ASR) and natural language (NLU) system provides a model or models (we say models because in many cases, there may be more than one). 
 
@@ -25,7 +25,7 @@ The acoustic model is more subtle, but analyzes raw audio to derive how sounds m
 # Natural Language Training
 Natural language training involves teaching the system how words and phrases map to intents and entities.
 
-This process is also highly reliant on [collecting data](/building-blocks/modeling/collecting-data). In this case, the data are the text utterances of what actual users say, and the intents and entities these utterances map to.
+This process is also highly reliant on [collecting data](/guide/building-blocks/modeling/collecting-data). In this case, the data are the text utterances of what actual users say, and the intents and entities these utterances map to.
 
 # Training In Practice
 For platforms such as Amazon Lex and Google Dialogflow, there is no distinction made between ASR and NLU training. Instead, [one simply adds sample utterances](https://docs.aws.amazon.com/lex/latest/dg/API_Slot.html#lex-Type-Slot-sampleUtterances) that [map text utterances to intents and entities](https://cloud.google.com/dialogflow/es/docs/entities-options#map). So, for example, if we see that when users say "Marie Curie" it is incorrectly being understood as "Mariah Carey", we simple add an additional sample utterance "Mariah Carey" as a sample utterance for the slot value "Marie Curie".
@@ -36,7 +36,7 @@ Both are valid techniques for fixing this sort of error. When available, we tend
 
 If we adjust our training data at the acoustic level, we can clearly distinguish between cases where the user says "Marie" and "Mariah".
 
-Once a model is trained, the next step is to [re-test it](/building-blocks/modeling/measuring-accuracy) to ensure the changes have had the intended effect, as well as minimal side-effects. If the results are good, it can be put into production where it should be [monitored on an ongoing basis](/building-blocks/modeling/monitoring-interactions).
+Once a model is trained, the next step is to [re-test it](/guide/building-blocks/modeling/measuring-accuracy) to ensure the changes have had the intended effect, as well as minimal side-effects. If the results are good, it can be put into production where it should be [monitored on an ongoing basis](/guide/building-blocks/modeling/monitoring-interactions).
 
 
 

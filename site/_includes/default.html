@@ -17,11 +17,14 @@
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
     {% endif %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script defer data-domain="convocollective.org" src="https://plausible.io/js/plausible.js"></script>
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     {% include "./partials/navbar.html" %}
 
-    {{ content | safe }}
+    <main class="flex-grow">
+      {{ content | safe }}
+    </main>
 
     {% include "./partials/footer.html" %}
 

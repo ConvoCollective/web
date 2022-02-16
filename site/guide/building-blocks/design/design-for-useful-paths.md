@@ -23,8 +23,6 @@ A useful conversation path :
 
 An application that exposes all of the useful conversation paths to the user upfront  is likely to cause information overload. As with any other digital interface—remember, conversational apps are software—the functionality must be prioritized based on the main jobs to be done and the user’s desired outcome. Research activities like card sorting can help uncover the best information architecture for  conversational applications. Card sorting exercises and working back from the desired outcome can help you make informed decisions around which paths to actively expose (for example, in a welcome message) and which ones to support indirectly. You can think about this as topics to discuss, with their subtopics and indirectly supported topics throughout. For conversational applications that cover a wide range of topics, thinking about information architecture becomes increasingly important.
 
-** Lauren, do we want to keep things at this prescriptive level or do we go down into the detail of how-to design conversations? I think the former is more of what we are aiming at but happy to go further into the details…
-
 ✅ Do:  
 * Define useful conversational pathways
 * Highlight useful pathways for users within the conversational application

@@ -1,7 +1,44 @@
-<footer class="{{ 'fixed' if path == 'home' }} bottom-0 text-center w-full py-4">
+<footer class="{{ 'fixed' if path == 'home' }} bottom-0 text-center w-full py-4 clear-both" style="position: relative;">
+    {% if '/guide' in page.url %}
+      <div class="sponsors text-gray-500">
+        This Conversation Construction guide exists thanks to the contributions and support of our wonderful sponsors:
+
+        <div class="logos">
+          <a href="https://bespoken.io" target="_blank" title="Bespoken">
+            <img src="/static/img/bespoken-logo.png" alt="Bespoken" />
+          </a>
+
+          <a href="https://opendialog.ai" target="_blank" title="OpenDialog">
+            <img src="/static/img/open-dialog-logo.png" alt="OpenDialog" />
+          </a>
+
+          <a href="https://outriderux.com/" target="_blank" title="outriderUX">
+            <img src="/static/img/outriderUXlogo.png" alt="outriderUX" />
+          </a>
+
+          <a href="https://voxable.io" target="_blank" title="Voxable">
+            <img src="/static/img/voxable-logo.png" alt="Voxable" />
+          </a>
+        </div>
+      </div>
+    {% endif %}
+
     <small class="text-gray-500">Copyright ©
         {{settings.name}}
     </small>
+
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+      <img src="/static/img/by-sa.png" alt="Creative Commons by-SA logo" class="ml-4" style="height: 40px;" />
+    </a>
+
+    <a class="text-gray-500 text-sm"
+       style="position: absolute; right: 15px; bottom: 15px;"
+       href="https://github.com/ConvoCollective/conversational-ai-guide/edit/master/{{ page.inputPath }}">
+      <img src='/static/img/octocat.png' class="inline-block" style='width: 20px; margin-top: -2px;' />
+
+      Edit this page on GitHub
+    </a>
+
         <!-- Required popper.js -->
     <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
@@ -15,11 +52,4 @@
             });
         }
     </script>
-    <div class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg" id="tooltip-example">
-        <div>
-        <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
-            Hi. I am tooltip.
-        </div>
-        </div>
-    </div>
 </footer>
