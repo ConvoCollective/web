@@ -30,7 +30,7 @@ collections:
         name: "tags"
         multiple: true
         create: true
-        options: ["building_block", "design"]
+        options: ["building_block", "design", "modeling", "contribution", "research", "strategy"]
   - label: "Settings"
     name: "settings"
     editor:
