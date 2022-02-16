@@ -6,6 +6,7 @@ backend:
 media_folder: "_site/static/img"
 public_folder: "_site/static/img"
 logo_url: "https://convocollective.org/static/img/ConversationalCollective_long_1920.png"
+site_url: https://convocollective.org
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
