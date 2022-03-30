@@ -34,4 +34,8 @@ JavaScript is run in the browser via Browserify. Packages are managed with yarn.
 
 We use Nunjucks for templating, which is the 11ty default. If you use WebStorm (or another Jetbrains IDE like Rubymine), [check here for instructions on adding Nunjucks syntax highlighting to your editor](https://stackoverflow.com/questions/33558627/integrating-nunjucks-with-intellij-idea-webstorm).
 
+### Components
+
+We use [Slinkity](https://slinkity.dev/) to enable the use of React components, which are [needed to render previews in Netlify CMS](https://www.netlifycms.org/docs/customization/).
+
 
