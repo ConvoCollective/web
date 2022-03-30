@@ -1,3 +1,7 @@
+---
+title: Artificial Intelligence
+---
+
 # Artificial Intelligence
 noun.
 
@@ -6,7 +10,6 @@ Artificial Intelligence is a field of study and and emerging technology that giv
 http://people.cs.ubc.ca/~poole/ci/ch1.pdf
 
 --
-
 #### Synonyms
 * Computational Intelligence
 

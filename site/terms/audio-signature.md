@@ -1,3 +1,7 @@
+---
+title: Audio Signature
+---
+
 # Audio Signature
 noun.
 

@@ -1,6 +1,9 @@
-# Chatbot
+---
+title: Chatbot
+---
 
-Noun.
+# Chatbot
+noun.
 
 A web application with which users interact via a messaging channel. A type of conversational interface.
 

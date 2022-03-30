@@ -1,3 +1,7 @@
+---
+title: Character Profile
+---
+
 # Character Profile
 noun.
 
