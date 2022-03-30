@@ -30,4 +30,8 @@ Unit-testing is performed with Ava. Ava is preferred versus Mocha because it pro
 
 JavaScript is run in the browser via Browserify. Packages are managed with yarn.
 
+### Templating
+
+We use Nunjucks for templating, which is the 11ty default. If you use WebStorm (or another Jetbrains IDE like Rubymine), [check here for instructions on adding Nunjucks syntax highlighting to your editor](https://stackoverflow.com/questions/33558627/integrating-nunjucks-with-intellij-idea-webstorm).
+
 
