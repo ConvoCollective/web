@@ -3,10 +3,10 @@ layout: glossary
 ---
 
 <section class="mt-15">
-  {% set termslist = collections.term %}
+  {% set termslist = collections.terms %}
 
   {% for term in termslist | reverse %}
-    {% if term.data.title %}  
+    {% if term.data.title %}
       <article class="my-8">
         <h2 class="font-bold text-3xl text-gray-900 mb-2">
           <a href="{{ term.url | url }}">

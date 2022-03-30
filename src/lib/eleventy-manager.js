@@ -68,7 +68,7 @@ class EleventyManager {
     })
 
     // We do some pre-processing on our terms collection
-    eleventyConfig.addCollection('term', function (collectionApi) {
+    eleventyConfig.addCollection('terms', function (collectionApi) {
       return collectionApi.getFilteredByGlob('**/terms/*.md').filter(t => {
         // console.info('filtering: ' + t.inputPath + ' title: ' + JSON.stringify(t.data.title))
         return t.data.title !== undefined

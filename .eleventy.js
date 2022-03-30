@@ -1,5 +1,4 @@
 const EleventyManager = require('./src/lib/eleventy-manager')
-const eleventyReact = require("eleventy-plugin-react");
 
 module.exports = function (eleventyConfig) {
   const manager = new EleventyManager()
@@ -13,12 +12,9 @@ module.exports = function (eleventyConfig) {
   // Ensure Netlify CMS admin config is added to built site.
   eleventyConfig.addPassthroughCopy("site/admin/config.yml");
 
-  // Add react plugin
-  eleventyConfig.addPlugin(eleventyReact);
+  eleventyConfig.ignores.add("_site/terms/*.md");
 
   const result = manager.initialize(eleventyConfig)
-
-  result['dir']['input'] = 'site';
 
   console.info('JSON: ' + JSON.stringify(result, null, 2))
   return result
