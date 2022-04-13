@@ -38,6 +38,7 @@
     "core-js": "3",
     "eleventy-plugin-react": "^1.1.0",
     "html-react-parser": "^1.4.10",
+    "lodash.filter": "^4.6.0",
     "markdown-it-front-matter": "^0.2.3",
     "markdown-it-link-preview": "^1.1.1",
     "postcss": "^8.3.11",

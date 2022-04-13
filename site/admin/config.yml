@@ -36,8 +36,20 @@ collections:
     name: "glossary"
     folder: "site/terms"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+      - label: "Related Terms"
+        name: "related_terms"
+        widget: relation
+        collection: glossary
+        search_fields: ["title"]
+        display_fields: ["{{title}}"]
+        value_field: "{{slug}}"
+        multiple: true
   - label: "Settings"
     name: "settings"
     editor:

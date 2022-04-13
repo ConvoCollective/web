@@ -13,7 +13,7 @@ class GlossaryManager {
   constructor (baseDirectory) {
     this.baseDirectory = baseDirectory
 
-    /** @type {Object<string, GlossaryTerm>} */
+    /** @type {Object<string, GlossaryTermObj>} */
     this.terms = {}
   }
 
@@ -34,10 +34,10 @@ class GlossaryManager {
   }
 
   /**
-   * @returns {GlossaryTerm[]}
+   * @returns {GlossaryTermObj[]}
    */
   allTerms () {
-    /** @type {GlossaryTerm[]} */
+    /** @type {GlossaryTermObj[]} */
     const terms = []
     for (const term of Object.keys(this.terms)) {
       const markdown = this.terms[term]
@@ -68,7 +68,7 @@ class GlossaryManager {
 
   /**
    * @param {string} term
-   * @returns {GlossaryTerm | undefined}
+   * @returns {GlossaryTermObj | undefined}
    */
   term (term) {
     return this.terms?.[term]
@@ -77,29 +77,33 @@ class GlossaryManager {
   /**
    * @param {string} term
    * @param {string} fileName
-   * @returns {GlossaryTerm}
+   * @returns {GlossaryTermObj}
    */
   _parseTerm (term, fileName) {
     /** @type {Object<string, string>} */
     const frontMatter = {}
     const markdown = MarkdownIT().use(require('markdown-it-front-matter'), (frontMatterString) => {
       for (const line of frontMatterString.split('\n')) {
-        const key = line.split(':')[0]
-        const value = line.split(':')[1].trim()
+        const splitLine = line.split(':')
+
+        if (!splitLine[1]) return
+
+        const key = splitLine[0]
+        const value = splitLine[1].trim()
         frontMatter[key] = value
       }
     })
 
     const contents = require('fs').readFileSync(fileName, 'utf-8')
     const html = markdown.render(contents)
-    return new GlossaryTerm(term, html, frontMatter)
+    return new GlossaryTermObj(term, html, frontMatter)
   }
 }
 
 /**
  * Class to manage parsed markdown
  */
-class GlossaryTerm {
+class GlossaryTermObj {
   /**
    *
    * @param {string} name
@@ -135,4 +139,4 @@ class GlossaryTerm {
   }
 }
 
-module.exports = { GlossaryManager, GlossaryTerm }
+module.exports = { GlossaryManager, GlossaryTerm: GlossaryTermObj }

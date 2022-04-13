@@ -1,4 +1,5 @@
 import parse from 'html-react-parser'
+import filter from 'lodash.filter'
 
 export const frontMatter = {
   layout: 'default.njk',
@@ -18,7 +19,19 @@ export const frontMatter = {
  *
  */
 function GlossaryTerm (term) {
-  // console.log(term)
+  const relatedTermsList = term.related_terms.map((relatedTermSlug) => {
+    // Find the related term from the glossary collection by its slug.
+    const relatedTerm = filter(term.collections.terms, (collectionTerm) => {
+      return relatedTermSlug === collectionTerm.fileSlug
+    })[0]
+
+    return <li key={relatedTerm.fileSlug}>
+      <a href={relatedTerm.url}>
+        {relatedTerm.data.title}
+      </a>
+    </li>
+  })
+
   return (
 
     <>
@@ -34,6 +47,12 @@ function GlossaryTerm (term) {
           <p className="italic text-gray-500">{ term.partOfSpeech }</p>
 
           { parse(term.content) }
+
+          <h4>Related Terms</h4>
+
+          <ul>
+            { relatedTermsList }
+          </ul>
         </article>
       </div>
     </>
