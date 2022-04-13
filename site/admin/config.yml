@@ -17,7 +17,7 @@ collections:
     folder: "site/guide/building-blocks"
     create: false
     nested:
-      depth: 5
+      depth: 2
     editor:
       preview: true
     fields:
@@ -34,7 +34,10 @@ collections:
         options: ["building_block", "design", "modeling", "contribution", "research", "strategy"]
   - label: "Glossary"
     name: "glossary"
-    folder: "site/glossary"
+    folder: "site/terms"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - label: "Settings"
     name: "settings"
     editor:
@@ -71,3 +74,4 @@ collections:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }
           - { label: URL, name: url, widget: string }
+

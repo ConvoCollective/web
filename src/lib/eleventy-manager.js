@@ -43,7 +43,7 @@ class EleventyManager {
     eleventyConfig.addPassthroughCopy({
       './node_modules/alpinejs/dist/alpine.js': './static/js/alpine.js',
       './node_modules/prismjs/themes/prism-tomorrow.css': './static/css/prism-tomorrow.css',
-      './src/admin/config.yml': './admin/config.yml'
+      './site/admin/config.yml': './config.yml'
     })
 
     // Copy Image Folder to /_site

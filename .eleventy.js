@@ -9,9 +9,6 @@ module.exports = function (eleventyConfig) {
   //   variable once 11ty hits 1.0
   // eleventyConfig.addGlobalData('githubRepo', 'ConvoCollective/conversational-ai-guide')
 
-  // Ensure Netlify CMS admin config is added to built site.
-  eleventyConfig.addPassthroughCopy("site/admin/config.yml");
-
   eleventyConfig.ignores.add("_site/terms/*.md");
 
   const result = manager.initialize(eleventyConfig)
