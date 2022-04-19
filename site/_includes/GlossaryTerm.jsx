@@ -18,7 +18,7 @@ export const frontMatter = {
  *
  */
 function GlossaryTerm (term) {
-  console.log('GlossaryTerm inspect:', term)
+  // console.log('GlossaryTerm inspect:', term)
 
   // Generate the list of related terms.
   const relatedTermsList = term.relatedTerms?.map((relatedTermSlug) => {
@@ -37,7 +37,7 @@ function GlossaryTerm (term) {
 
   // Generate the list of resource link previews.
   const resources = term.resources?.map((resource) => {
-    console.log('resource!', resource)
+    // console.log('resource!', resource)
 
     return parse(md.render(
       `[@preview](${resource})`
