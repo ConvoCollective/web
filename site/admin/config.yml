@@ -52,6 +52,10 @@ collections:
         name: "body"
         widget: "markdown"
         required: false
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        field: { label: "URL", name: "url", widget: "string" }
       - label: "Related Terms"
         name: "relatedTerms"
         required: false
