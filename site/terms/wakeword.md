@@ -1,4 +1,4 @@
 ---
-title: Prosody
+title: Wakeword
 partOfSpeech: noun
 ---

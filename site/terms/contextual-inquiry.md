@@ -1,5 +1,10 @@
-# Contextual Inquiry
-noun.
+---
+title: Contextual Inquiry
+published: true
+partOfSpeech: noun
+relatedTerms:
+  - user-centered-design
+---
 
 Contextual inquiry is a semi-structured interview method<sup>1</sup> in which users are observed in their environment while being interviewed or asked questions about what they are doing. 
 

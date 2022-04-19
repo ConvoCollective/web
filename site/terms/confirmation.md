@@ -1,0 +1,4 @@
+---
+title: Confirmation
+partOfSpeech: noun
+---

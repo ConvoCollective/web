@@ -20,7 +20,7 @@ export const frontMatter = {
  */
 function GlossaryTerm (term) {
   console.log('GlossaryTerm inspect:', term)
-  const relatedTermsList = term.related_terms?.map((relatedTermSlug) => {
+  const relatedTermsList = term.relatedTerms?.map((relatedTermSlug) => {
     // Find the related term from the glossary collection by its slug.
     const relatedTerm = filter(term.collections.terms, (collectionTerm) => {
       return relatedTermSlug === collectionTerm.fileSlug
@@ -51,7 +51,7 @@ function GlossaryTerm (term) {
           { parse(term.content) }
 
           {
-            term.related_terms &&
+            term.relatedTerms &&
             <div>
               <h4>Related Terms</h4>
 

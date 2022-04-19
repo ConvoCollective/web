@@ -53,7 +53,7 @@ collections:
         widget: "markdown"
         required: false
       - label: "Related Terms"
-        name: "related_terms"
+        name: "relatedTerms"
         required: false
         widget: relation
         collection: glossary

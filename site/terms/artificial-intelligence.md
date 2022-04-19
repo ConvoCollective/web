@@ -1,5 +1,7 @@
 ---
 title: Artificial Intelligence
+published: true
+partOfSpeech: noun
 ---
 
 # Artificial Intelligence
