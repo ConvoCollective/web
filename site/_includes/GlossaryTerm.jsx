@@ -1,5 +1,9 @@
 import parse from 'html-react-parser'
 import filter from 'lodash.filter'
+import MarkdownIt from 'markdown-it'
+import linkPreview from 'markdown-it-link-preview'
+const md = MarkdownIt()
+md.use(linkPreview)
 
 export const frontMatter = {
   layout: 'default.njk',
@@ -7,19 +11,16 @@ export const frontMatter = {
 }
 
 /**
- * An example component.
+ * A glossary term.
  *
- * @param term
- * @param partOfSpeech
- * @param content
- * @param children
- * @param title
- * @example
- *   {% component 'GlassCounter.jsx', hydrate='eager' %}
+ * @param {Object} term -
+ *   The term being displayed.
  *
  */
 function GlossaryTerm (term) {
   console.log('GlossaryTerm inspect:', term)
+
+  // Generate the list of related terms.
   const relatedTermsList = term.relatedTerms?.map((relatedTermSlug) => {
     // Find the related term from the glossary collection by its slug.
     const relatedTerm = filter(term.collections.terms, (collectionTerm) => {
@@ -32,6 +33,15 @@ function GlossaryTerm (term) {
           {relatedTerm.data.title}
         </a>
       </li>)
+  })
+
+  // Generate the list of resource link previews.
+  const resources = term.resources?.map((resource) => {
+    console.log('resource!', resource)
+
+    return parse(md.render(
+      `[@preview](${resource})`
+    ))
   })
 
   return (
@@ -58,6 +68,15 @@ function GlossaryTerm (term) {
               <ul>
                 { relatedTermsList }
               </ul>
+            </div>
+          }
+
+          {
+            term.resources &&
+            <div>
+              <h4>Resources</h4>
+
+              { resources }
             </div>
           }
         </article>
