@@ -12,7 +12,7 @@
     {% endif %}
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/@root/_styles/styles.css"/>
     {% if prism == true %}
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
     {% endif %}
@@ -28,7 +28,7 @@
 
     {% include "./partials/footer.html" %}
 
-    <script src="/static/js/alpine.js"></script>
+    <script src="/static/js/alpine.js" type="module"></script>
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->
