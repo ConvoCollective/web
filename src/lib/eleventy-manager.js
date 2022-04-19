@@ -43,7 +43,7 @@ class EleventyManager {
     eleventyConfig.addPassthroughCopy({
       './node_modules/alpinejs/dist/alpine.js': './static/js/alpine.js',
       './node_modules/prismjs/themes/prism-tomorrow.css': './static/css/prism-tomorrow.css',
-      './site/admin/config.yml': './config.yml'
+      './site/admin/config.yml': './admin/config.yml'
     })
 
     // Copy Image Folder to /_site
@@ -71,7 +71,7 @@ class EleventyManager {
     eleventyConfig.addCollection('terms', function (collectionApi) {
       return collectionApi.getFilteredByGlob('**/terms/*.md').filter(t => {
         // console.info('filtering: ' + t.inputPath + ' title: ' + JSON.stringify(t.data.title))
-        return t.data.title !== undefined
+        return (t.data.title !== undefined && t.data.published !== undefined)
       }).sort(function (a, b) {
         return b.data.title.localeCompare(a.data.title)
       })

@@ -19,17 +19,19 @@ export const frontMatter = {
  *
  */
 function GlossaryTerm (term) {
-  const relatedTermsList = term.related_terms.map((relatedTermSlug) => {
+  console.log('GlossaryTerm inspect:', term)
+  const relatedTermsList = term.related_terms?.map((relatedTermSlug) => {
     // Find the related term from the glossary collection by its slug.
     const relatedTerm = filter(term.collections.terms, (collectionTerm) => {
       return relatedTermSlug === collectionTerm.fileSlug
     })[0]
 
-    return <li key={relatedTerm.fileSlug}>
-      <a href={relatedTerm.url}>
-        {relatedTerm.data.title}
-      </a>
-    </li>
+    return relatedTerm &&
+      (<li key={relatedTerm.fileSlug}>
+        <a href={relatedTerm.url}>
+          {relatedTerm.data.title}
+        </a>
+      </li>)
   })
 
   return (
@@ -48,11 +50,16 @@ function GlossaryTerm (term) {
 
           { parse(term.content) }
 
-          <h4>Related Terms</h4>
+          {
+            term.related_terms &&
+            <div>
+              <h4>Related Terms</h4>
 
-          <ul>
-            { relatedTermsList }
-          </ul>
+              <ul>
+                { relatedTermsList }
+              </ul>
+            </div>
+          }
         </article>
       </div>
     </>

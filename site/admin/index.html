@@ -4,6 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Conversational Collective Website: Content Manager</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     </head>
     <body>
         <!-- Include the script that builds the page and powers Netlify CMS -->
@@ -11,5 +12,22 @@
 
         <!-- Netlify Identity Widget -->
         <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+        <script type="text/javascript">
+          CMS.registerPreviewStyle("/static/css/style.css");
+          CMS.registerPreviewStyle("/static/css/prism-tomorrow.css");
+
+          let GlossaryTermPreview = createClass({
+            render: function() {
+              let entry = this.props.entry;
+              return h('div', {},
+                h('h1', {},
+                  entry.getIn(['data', 'title']))
+              );
+            }
+          });
+
+          //CMS.registerPreviewTemplate("glossary", GlossaryTermPreview);
+        </script>
     </body>
 </html>

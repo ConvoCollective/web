@@ -39,11 +39,22 @@ collections:
       - label: "Title"
         name: "title"
         widget: "string"
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        required: false
+      - label: "Part of Speech"
+        name: "partOfSpeech"
+        widget: "select"
+        options: ["noun", "verb", "adjective"]
+        required: false
       - label: "Body"
         name: "body"
         widget: "markdown"
+        required: false
       - label: "Related Terms"
         name: "related_terms"
+        required: false
         widget: relation
         collection: glossary
         search_fields: ["title"]
