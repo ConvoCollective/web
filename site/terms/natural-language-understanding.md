@@ -4,5 +4,5 @@ partOfSpeech: noun
 synonyms:
   - NLU
 resources:
-  - https://www.technologyreview.com/s/602658/context-language-and-reasoning-in-ai-three-key-challenges/
+  - https://www.technologyreview.com/2016/10/14/156968/context-language-and-reasoning-in-ai-three-key-challenges/
 ---
