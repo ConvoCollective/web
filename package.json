@@ -45,7 +45,7 @@
   },
   "scripts": {
     "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open",
-    "build": "run-s build:css build:debug",
+    "build": "run-s build:css build:site",
     "build:site": "cross-env NODE_ENV=production eleventy",
     "build:css": "postcss site/static/css/tailwind.css --o _site/static/css/style.css",
     "compile": "tsc",
