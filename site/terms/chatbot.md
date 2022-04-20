@@ -1,6 +1,12 @@
-# Chatbot
-
-Noun.
+---
+title: Chatbot
+published: true
+partOfSpeech: noun
+synonyms:
+  - Bot
+  - Messaging Application
+  - Virtual Assistant
+---
 
 A web application with which users interact via a messaging channel. A type of conversational interface.
 
@@ -9,14 +15,3 @@ Chatbots can consist of structured messages as well as free-form, natural langua
 
 ![A Facebook Messenger Chatbot](https://github.com/voxable-labs/cui-glossary/blob/master/images/chatbot.jpg?raw=true "A Facebook Messenger Chatbot")
 A Facebook Messenger Chatbot
-
---
-#### Synonyms
-* Bot
-* Messaging Application
-
-#### Related Terms
-* Conversational User Interface
-* Chat Affordances
-* Structured Messages
-* Natural Language Understanding

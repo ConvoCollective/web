@@ -3,21 +3,23 @@ backend:
   name: git-gateway
   branch: master
   ### enable below lines for github integration ###
-  # name: github
-  # repo: surjithctly/neat-starter
-media_folder: "src/static/img"
-public_folder: "/static/img"
+media_folder: "_site/static/img"
+public_folder: "_site/static/img"
+logo_url: "https://convocollective.org/static/img/ConversationalCollective_long_1920.png"
+site_url: https://convocollective.org
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
-    folder: "src/posts"
-    create: true
+  - label: "Building Blocks"
+    name: "building-blocks"
+    folder: "site/guide/building-blocks"
+    create: false
+    nested:
+      depth: 2
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -29,7 +31,40 @@ collections:
         name: "tags"
         multiple: true
         create: true
-        options: ["Tags", "created", "from", "config.yml"]
+        options: ["building_block", "design", "modeling", "contribution", "research", "strategy"]
+  - label: "Glossary"
+    name: "glossary"
+    folder: "site/terms"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        required: false
+      - label: "Part of Speech"
+        name: "partOfSpeech"
+        widget: "select"
+        options: ["noun", "verb", "adjective"]
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        field: { label: "URL", name: "url", widget: "string" }
+      - label: "Related Terms"
+        name: "relatedTerms"
+        required: false
+        widget: relation
+        collection: glossary
+        search_fields: ["title"]
+        display_fields: ["{{title}}"]
+        value_field: "{{slug}}"
+        multiple: true
   - label: "Settings"
     name: "settings"
     editor:
@@ -66,3 +101,4 @@ collections:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }
           - { label: URL, name: url, widget: string }
+

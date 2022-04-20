@@ -20,6 +20,8 @@ ava('does not replace terms that are partial matches', async (test) => {
   test.is(newString, 'Chatbotter')
 })
 
+// TODO: Not sure what we're meant to be testing, here.
+/*
 ava('does not replace terms inside the glossary', async (test) => {
   const eleventyManager = new EleventyManager()
   const glossaryManager = new GlossaryManager('./site/terms')
@@ -28,4 +30,4 @@ ava('does not replace terms inside the glossary', async (test) => {
   const newString = eleventyManager._linkContent(glossaryManager, 'entities')
   // natural language understanding should NOT be linked
   test.assert(newString.includes('with natural language understanding (NLU)'))
-})
+})  */

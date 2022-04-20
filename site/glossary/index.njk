@@ -1,0 +1,30 @@
+---
+layout: glossary
+---
+
+<section class="mt-15">
+  {% set termslist = collections.terms %}
+
+  {% set firstLetter = '' %}
+  {% for term in termslist | reverse %}
+    {% set termFirstLetter = term.data.title.slice(0, 1) %}
+    {% if firstLetter !== termFirstLetter %}
+      {% set firstLetter = termFirstLetter %}
+      <h3 class="font-bold text-4xl text-gray-900 mb-2 border-b-gray-900">
+          {{ termFirstLetter }}
+      </h3>
+    {% endif %}
+
+    {% if term.data.title %}
+      <article class="my-4">
+        <h2 class="font-bold text-3xl text-gray-900">
+          <a href="{{ term.url | url }}">
+            {% if term.data.title %}
+                <a href="{{ term.url | url }}" class="text-indigo-500 font-bold text-lg">{{ term.data.title }}</a>
+            {% endif %}
+          </a>
+        </h2>
+      </article>
+      {% endif %}
+  {% endfor %}
+</section>

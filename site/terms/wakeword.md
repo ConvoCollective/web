@@ -1,0 +1,4 @@
+---
+title: Wakeword
+partOfSpeech: noun
+---

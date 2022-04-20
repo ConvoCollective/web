@@ -12,11 +12,23 @@
     {% endif %}
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <!-- <link rel="stylesheet" type="text/css" href="/@root/_styles/styles.css"/> -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
-    {% if prism == true %}
+
+      {% if prism == true %}
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
     {% endif %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+      <script defer type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+      <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', () => {
+          var bLazy = new Blazy({
+            selector: ".lp img",
+            offset: 300,
+            success: (element) => {element.style.backgroundColor = "white";}
+          });
+        })
+      </script>
     <script defer data-domain="convocollective.org" src="https://plausible.io/js/plausible.js"></script>
   </head>
   <body class="flex flex-col min-h-screen">
@@ -28,7 +40,7 @@
 
     {% include "./partials/footer.html" %}
 
-    <script src="/static/js/alpine.js"></script>
+    <script src="/static/js/alpine.js" type="module"></script>
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->

@@ -1,9 +1,13 @@
 _site/
 _tmp/
-.DS_Store
+.DS_Store/
 node_modules/
 .vscode/
 _site/
+_styles/
 *git/
 package-lock.json
 .env
+
+# 11ty builds
+.11ty-build-*

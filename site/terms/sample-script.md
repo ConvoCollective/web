@@ -1,2 +1,4 @@
-# Sample Script
-
+---
+title: Sample Script
+partOfSpeech: noun
+---

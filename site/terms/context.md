@@ -1,0 +1,18 @@
+---
+title: Context
+published: true
+partOfSpeech: noun
+synonyms:
+  - State
+relatedTerms:
+  - intent
+  - entity
+---
+
+Context refers to the way that we use language to describe things. Conversations build upon themselves and establish context which dictates the meaning of certain words of phrases.
+
+* *What's the weather like in Austin, TX?* 
+	* *Mostly sunny with a high of 78 degrees and a low of 71 degrees.*
+* *How long will it take me to get **there**?*
+
+Where "**there**" is referring to Austin, TX, which was established in the first question.

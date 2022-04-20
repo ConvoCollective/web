@@ -1,6 +1,10 @@
 ---
 title: Entity
-synonyms: entities, entity recognition
+published: true
+partOfSpeech: noun
+synonyms:
+  - Entities
+  - Entity Recognition
 ---
 # What is an Entity?
 Entities are powerful but can be confusing to designers unfamiliar with natural language understanding (NLU). An entity represents a data point found in what a user says to a bot. They can also be thought of as the data the system needs users to provide in order to carry out their request. When the value of an entity changes or is altogether left out the bot must respond accordingly.  

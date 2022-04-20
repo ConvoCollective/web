@@ -1,0 +1,4 @@
+---
+title: Grounding
+partOfSpeech: noun
+---
