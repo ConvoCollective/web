@@ -1,6 +1,7 @@
 ---
 title: Collect data to improve model accuracy
-description: Collecting data that correspond to real user interactions improve the accuracy and robustness of your bot.
+description: Collecting data that correspond to real user interactions improve
+  the accuracy and robustness of your bot.
 date: 2021-06-23
 layout: posts
 topic: 🚂Modeling & Training
@@ -9,7 +10,7 @@ tags:
   - building_block
   - modeling
 ---
-Collecting data that correspond to real user interactions improve the accuracy and robustness of your bot. 
+Collecting data that correspond to real user interactions improves the accuracy and robustness of your bot. 
 
 Data can come from a variety of sources - when starting out, they will often come from the developer or designer working on the bot, and may be a small set of phrases that seem most obvious for potential users’ to use.
 
@@ -25,4 +26,4 @@ As the amount of data grows, there is a divergence between test data and trainin
 
 ![DomainPercentageByStage](/static/img/domain-percentage-by-stage.png)
 
-At every stage, the data collected is used to [measure](/guide/building-blocks/modeling/measuring-accuracy.md) and train the model to improve its accuracy. 
+At every stage, the data collected is used to [measure](/guide/building-blocks/modeling/measuring-accuracy.md) and train the model to improve its accuracy.
