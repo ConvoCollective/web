@@ -1,6 +1,4 @@
 const EleventyManager = require('./src/lib/eleventy-manager')
-// const slinkity = require('slinkity')
-// const react = require('@slinkity/renderer-react')
 const fs = require("fs");
 const crypto = require("crypto");
 const scrape = require('html-metadata');
@@ -77,30 +75,6 @@ module.exports = function (eleventyConfig) {
   // eleventyConfig.addGlobalData('githubRepo', 'ConvoCollective/conversational-ai-guide')
 
   eleventyConfig.ignores.add("_site/terms/*.md");
-
-  /*
-  eleventyConfig.addPlugin(slinkity.plugin, slinkity.defineConfig({
-    renderers: [react],
-  }))
-  */
-
-
-  /**
-   * Why copy the /public directory?
-   *
-   * Slinkity uses Vite (https://vitejs.dev) under the hood for processing styles and JS resources
-   * This tool encourages a /public directory for your static assets like social images
-   * To ensure this directory is discoverable by Vite, we copy it to our 11ty build output like so:
-   */
-  eleventyConfig.addPassthroughCopy('public')
-
-  /*eleventyConfig.setBrowserSyncConfig({
-    middleware: [
-      function (req, res, next) {
-        return res.setHeader('Content-Type', 'text/html');
-      }
-    ]
-  });*/
 
   eleventyConfig.addNunjucksAsyncFilter("linkPreview", linkPreview);
 
