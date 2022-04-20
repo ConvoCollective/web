@@ -10,7 +10,7 @@ tags:
   - building_block
   - modeling
 ---
-Collecting data that correspond to real user interactions improves the accuracy and robustness of your bot. 
+Collecting data that correspond to real user interactions improves the accuracy and robustness of your bot. I've made a change.
 
 Data can come from a variety of sources - when starting out, they will often come from the developer or designer working on the bot, and may be a small set of phrases that seem most obvious for potential users’ to use.
 
