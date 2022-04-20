@@ -6,37 +6,48 @@ const md = MarkdownIt()
 md.use(linkPreview)
 
 export const frontMatter = {
-  layout: 'default.njk',
-  permalink: 'glossary/{{ page.fileSlug }}/index.html'
+  hydrate: {
+    mode: true,
+    // the result of this function
+    // will be passed to your component as props
+    props: (eleventyData) => ({
+      terms: eleventyData.collections.terms
+    })
+  }
 }
 
 /**
  * A glossary term.
- *
- * @param {Object} term -
- *   The term being displayed.
- *
+ * @param root0
+ * @param root0.term
+ * @param options
+ * @param root0.collections
+ * @param root0.slug
+ * @param root0.terms
+ * @param root0.partOfSpeech
+ * @param root0.resources
+ * @param root0.relatedTerms
+ * @param root0.content
  */
-function GlossaryTerm (term) {
-  // console.log('GlossaryTerm inspect:', term)
-
-  // Generate the list of related terms.
-  const relatedTermsList = term.relatedTerms?.map((relatedTermSlug) => {
+export default function GlossaryTerm ({ partOfSpeech, resources, relatedTerms, content, terms }) {
+  console.log('Term inspect:', terms)
+  /* const relatedTermsList = relatedTerms?.map((relatedTermSlug) => {
     // Find the related term from the glossary collection by its slug.
     const relatedTerm = filter(term.collections.terms, (collectionTerm) => {
       return relatedTermSlug === collectionTerm.fileSlug
     })[0]
 
-    return relatedTerm &&
-      (<li key={relatedTerm.fileSlug}>
+    const relatedTermUrl = "/glossary/#{relatedTermSlug}"
+
+    return <li key={relatedTermSlug}>
         <a href={relatedTerm.url}>
           {relatedTerm.data.title}
         </a>
       </li>)
-  })
+  }) */
 
   // Generate the list of resource link previews.
-  const resources = term.resources?.map((resource) => {
+  const resourcesList = resources?.map((resource) => {
     // console.log('resource!', resource)
 
     return parse(md.render(
@@ -44,45 +55,38 @@ function GlossaryTerm (term) {
     ))
   })
 
+  const markup = (
+
+    <div>
+      <article className="prose lg:prose-xl mx-auto">
+        <p className="italic text-gray-500">{ partOfSpeech }</p>
+
+        { parse(content) }
+
+        {
+          false &&
+          <div>
+            <h4>Related Terms</h4>
+
+            <ul>
+              { relatedTermsList }
+            </ul>
+          </div>
+        }
+
+        {
+          resources &&
+          <div>
+            <h4>Resources</h4>
+
+            { resourcesList }
+          </div>
+        }
+      </article>
+    </div>
+  )
+
   return (
-
-    <>
-      <div className="container max-w-4xl mt-4 px-6">
-        <div className="pb-5 mb-5 border-b border-gray-100">
-          <h1 className="font-bold text-5xl pb-12">Conversational AI
-            Glossary</h1>
-
-          <h2 className="font-bold text-3xl px-4">{ term.title }</h2>
-        </div>
-
-        <article className="prose lg:prose-xl mx-auto">
-          <p className="italic text-gray-500">{ term.partOfSpeech }</p>
-
-          { parse(term.content) }
-
-          {
-            term.relatedTerms &&
-            <div>
-              <h4>Related Terms</h4>
-
-              <ul>
-                { relatedTermsList }
-              </ul>
-            </div>
-          }
-
-          {
-            term.resources &&
-            <div>
-              <h4>Resources</h4>
-
-              { resources }
-            </div>
-          }
-        </article>
-      </div>
-    </>
+    <h1>Foo</h1>
   )
 }
-
-export default GlossaryTerm

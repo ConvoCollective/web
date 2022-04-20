@@ -4,5 +4,5 @@ partOfSpeech: noun
 synonyms:
   - SSML
 resources:
-  - https://ssml.guru
+  - http://ssml.guru
 ---
