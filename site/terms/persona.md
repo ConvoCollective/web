@@ -1,5 +1,6 @@
 ---
 title: Persona
+published: true
 partOfSpeech: noun
 resources:
   - https://www.voxable.io/blog/branding-bots-part-2-designing-personas-for-chatbots-voice-interfaces
