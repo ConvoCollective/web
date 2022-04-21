@@ -3,7 +3,7 @@ title: Monitoring model performance to identify issues and improve user satisfac
 description: Monitor model performance to identify issues and improve user satisfaction
 topic: 🚂Modeling & Training
 owner: John Kelvie
-layout: posts
+layout: building-block
 tags:
   - building_block
   - modeling

@@ -2,7 +2,7 @@
 title: Analyze Existing Communication Channels
 description: Review Competitive Offerings to Know The State-Of-The-Art In The Market
 date: 2021-07-18
-layout: posts
+layout: building-block
 topic: 💡Research & Strategy
 author: Lauren Golembiewski
 tags:

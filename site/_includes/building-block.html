@@ -1,0 +1,35 @@
+---
+layout: default
+prism: true
+---
+
+<div class="container max-w-4xl px-6">
+  <div class="pb-5 mb-5 border-b border-gray-100">
+    <h1 class="font-bold text-5xl">{{title}}</h1>
+    <p class="text-center text-base leading-6 font-medium text-gray-500">
+      {{ topic }}
+    </p>
+  </div>
+  <article class="prose my-4 mx-auto">
+    {{ content | safe }}
+  </article>
+
+  {% if relatedBlocks %}
+    <div class="prose related-blocks my-4 mx-auto">
+      <h2>Related Building Blocks</h2>
+      <ul>
+        {% for block in collections.building_block %}
+          {% for relatedBlock in relatedBlocks %}
+            {% if relatedBlock in block.url %}
+              <li>
+                <a href="{{ block.url }}">
+                  {{ block.data.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>

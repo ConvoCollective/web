@@ -3,7 +3,7 @@ title: Collect data to improve model accuracy
 description: Collecting data that correspond to real user interactions improve
   the accuracy and robustness of your bot.
 date: 2021-06-23
-layout: posts
+layout: building-block
 topic: 🚂Modeling & Training
 author: John Kelvie
 tags:

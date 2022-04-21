@@ -2,7 +2,7 @@
 title: Training models to improve accuracy
 description: Training your model is essential to improving accuracy and ensuring a great user experience
 topic: 🚂Modeling & Training
-layout: posts
+layout: building-block
 owner: John Kelvie
 tags:
   - building_block

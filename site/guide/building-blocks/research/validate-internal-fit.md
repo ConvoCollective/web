@@ -2,7 +2,7 @@
 title: Validate Internal Fit
 description: Determine if the conversational experience matches with your brand
 date: 2021-09-27
-layout: posts
+layout: building-block
 topic: 💡Research & Strategy
 author: Inge De Bleecker
 tags:

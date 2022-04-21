@@ -1,10 +1,12 @@
 ---
+layout: building-block
 title: Benchmark Against Competitors
 description: Review Competitive Offerings to Know The State-Of-The-Art In The Market
-date: 2021-09-27
-layout: posts
-topic: 💡Research & Strategy
 author: Inge De Bleecker
+date: 2021-09-27
+topic: 💡Research & Strategy
+relatedBlocks:
+  - research/analyze-existing-communication-channels
 tags:
   - building_block
   - research

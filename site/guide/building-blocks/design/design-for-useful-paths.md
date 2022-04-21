@@ -3,7 +3,7 @@ title: Design For Useful Conversational Paths
 description: Collecting data that correspond to real user interactions improve
   the accuracy and robustness of your bot.
 date: 2021-06-23
-layout: posts
+layout: building-block
 topic: 📐Specification & Design
 author: Maaike Coppens
 tags:

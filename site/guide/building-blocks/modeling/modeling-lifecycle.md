@@ -2,7 +2,7 @@
 title: Modeling Lifecycle Overview
 description: How to manage a Conversational AI model.
 date: 2021-07-07
-layout: posts
+layout: building-block
 author: John Kelvie
 tags:
   - building_block

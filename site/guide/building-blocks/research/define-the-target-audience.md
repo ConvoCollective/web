@@ -2,7 +2,7 @@
 title: Define The Target Audience
 description: Define the Target Audience for the Bot
 date: 2021-09-27
-layout: posts
+layout: building-block
 topic: 💡Research & Strategy
 author: Inge De Bleecker
 tags:

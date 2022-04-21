@@ -2,7 +2,7 @@
 title: Measure your model to assess accuracy
 description: Measuring the performance of your model is essential to improving accuracy and deliverig a great user experience.
 topic: 🚂Modeling & Training
-layout: posts
+layout: building-block
 owner: John Kelvie
 tags:
   - building_block

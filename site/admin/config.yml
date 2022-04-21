@@ -28,6 +28,15 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Related Building Blocks"
+        name: "relatedBlocks"
+        required: false
+        widget: relation
+        collection: building-blocks
+        search_fields: [ "title" ]
+        display_fields: [ "{{title}}" ]
+        value_field: "{{slug}}"
+        multiple: true
       - widget: select
         label: "tags"
         name: "tags"
