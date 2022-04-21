@@ -1,5 +1,6 @@
 ---
 title: Target Audience
+published: true
 partOfSpeech: noun
 ---
 
