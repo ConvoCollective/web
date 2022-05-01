@@ -1,0 +1,25 @@
+---
+layout: default
+prism: true
+permalink: "books/{{ page.fileSlug }}/index.html"
+---
+
+<div class="container max-w-4xl mt-4 px-6">
+  <div class="pb-5 mb-5 border-b border-gray-100">
+    <h1 class="font-bold text-5xl pb-12">Conversational AI Bookshelf 📚</h1>
+
+    <h2 class="font-bold text-3xl">{{title}}</h2>
+  </div>
+
+  {{ content | safe }}
+
+  {% if links %}
+  <h3>Purchase a Copy</h3>
+
+  {% for link in links %}
+
+  {{ link | linkPreview | safe}}
+
+  {% endfor %}
+  {% endif %}
+</div>
