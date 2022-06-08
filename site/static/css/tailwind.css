@@ -65,6 +65,10 @@ p {
   line-height: 32px;
 }
 
+blockquote {
+  @apply bg-gray-200 rounded-md p-8 italic;
+}
+
 
 /* Syntax Highlighting*/
 

@@ -6,15 +6,40 @@ permalink: "books/{{ page.fileSlug }}/index.html"
 
 <div class="container max-w-4xl mt-4 px-6">
   <div class="pb-5 mb-5 border-b border-gray-100">
-    <h1 class="font-bold text-5xl pb-12">Conversational AI Bookshelf 📚</h1>
+    <h1 class="font-bold text-4xl pb-12">Conversational AI Bookshelf 📚</h1>
 
-    <h2 class="font-bold text-3xl">{{title}}</h2>
+    <h2 class="font-bold text-6xl mb-8 text-center">{{title}}</h2>
+
+    {% if authors %}
+    <h3>Authors</h3>
+
+    <ol class="mb-8">
+      {% for author in authors %}
+
+      <li>{{ author }}</li>
+
+      {% endfor %}
+    </ol>
+    {% endif %}
+
+    Published: <em>{{ publicationDate }}</em>
   </div>
 
-  {{ content | safe }}
+
+
+  {% if isbn %}
+  <img alt="{{ title }} book cover" src="https://covers.openlibrary.org/b/isbn/{{ isbn }}-L.jpg" class="float-left pr-8 pb-8">
+  {% else %}
+  <img alt="{{ title }} book cover" src="{{ coverUrl }}" class="float-left pr-8 pb-8">
+  {% endif %}
+
+  <div class="content ml-8">
+    {{ content | safe }}
+  </div>
 
   {% if links %}
-  <h3>Purchase a Copy</h3>
+
+  <h3 class="clear-left">Purchase a Copy</h3>
 
   {% for link in links %}
 

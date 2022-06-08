@@ -2,28 +2,21 @@
 layout: book-list
 ---
 
-<section class="mt-15">
+<section class="mt-15 grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
   {% set bookslist = collections.books %}
 
-  {% set firstLetter = '' %}
   {% for book in bookslist | reverse %}
-    {% set bookFirstLetter = book.data.title.slice(0, 1) %}
-    {% if firstLetter !== bookFirstLetter %}
-      {% set firstLetter = bookFirstLetter %}
-      <h3 class="font-bold text-4xl text-gray-900 mb-2 border-b-gray-900">
-        {{ bookFirstLetter }}
-      </h3>
-    {% endif %}
-
     {% if book.data.title %}
-      <article class="my-4">
-        <h2 class="font-bold text-3xl text-gray-900">
-          <a href="{{ book.url | url }}">
-            {% if book.data.title %}
-              <a href="{{ book.url | url }}" class="text-indigo-500 font-bold text-lg">{{ book.data.title }}</a>
+      <article class="grid-item">
+        {% if book.data.title %}
+          <a href="{{ book.url | url }}" class="text-indigo-500 font-bold text-lg">
+            {% if book.data.isbn %}
+              <img alt="{{ book.data.title }} book cover"  title="{{ book.data.title }}" src="https://covers.openlibrary.org/b/isbn/{{ book.data.isbn }}-L.jpg" class="float-left pr-8 pb-8" width="200">
+            {% else %}
+              <img alt="{{ book.data.title }} book cover" title="{{ book.data.title }}" src="{{ book.data.coverUrl }}" class="float-left pr-8 pb-8" width="200">
             {% endif %}
           </a>
-        </h2>
+        {% endif %}
       </article>
     {% endif %}
   {% endfor %}
