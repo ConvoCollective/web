@@ -32,6 +32,7 @@ collections:
       - label: "ISBN"
         name: "isbn"
         widget: "string"
+        required: false
       - label: "Cover Image URL"
         name: "coverUrl"
         widget: "string"
