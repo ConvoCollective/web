@@ -34,7 +34,7 @@ collections:
         widget: "string"
       - label: "Cover Image URL"
         name: "coverUrl"
-        widget: "url"
+        widget: "string"
       - label: "Publication Date"
         name: "publicationDate"
         widget: "date"
