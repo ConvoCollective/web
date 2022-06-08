@@ -4,5 +4,7 @@ items:
     url: "/guide"
   - text: Glossary
     url: "/glossary"
+  - text: Bookshelf
+    url: "/books"
   - text: Contribute
     url: "/contribute"

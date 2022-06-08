@@ -77,6 +77,16 @@ class EleventyManager {
       })
     })
 
+    // Add books collection.
+    eleventyConfig.addCollection('books', function (collectionApi) {
+      return collectionApi.getFilteredByGlob('**/books/*.md').filter(t => {
+        // console.info('filtering: ' + t.inputPath + ' title: ' + JSON.stringify(t.data.title))
+        return (t.data.title !== undefined && t.data.published !== undefined)
+      }).sort(function (a, b) {
+        return b.data.title.localeCompare(a.data.title)
+      })
+    })
+
     // Allow sorting of collections alphabetically
     eleventyConfig.addFilter('alphabetical', (items) => {
       const sortedItems = items.sort((a, b) => {

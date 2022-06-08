@@ -1,0 +1,23 @@
+---
+layout: book-list
+---
+
+<section class="mt-15 grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+  {% set bookslist = collections.books %}
+
+  {% for book in bookslist | reverse %}
+    {% if book.data.title %}
+      <article class="grid-item">
+        {% if book.data.title %}
+          <a href="{{ book.url | url }}" class="text-indigo-500 font-bold text-lg">
+            {% if book.data.isbn %}
+              <img alt="{{ book.data.title }} book cover"  title="{{ book.data.title }}" src="https://covers.openlibrary.org/b/isbn/{{ book.data.isbn }}-L.jpg" class="float-left pr-8 pb-8" width="200">
+            {% else %}
+              <img alt="{{ book.data.title }} book cover" title="{{ book.data.title }}" src="{{ book.data.coverUrl }}" class="float-left pr-8 pb-8" width="200">
+            {% endif %}
+          </a>
+        {% endif %}
+      </article>
+    {% endif %}
+  {% endfor %}
+</section>
