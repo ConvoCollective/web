@@ -9,6 +9,16 @@ layout: book-list
     Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => {
       img.onload = img.onerror = resolve;
     }))).then(() => {
+      const links = document.getElementsByClassName('book-link')
+
+      // Set the height and width of each link to the image it
+      // contains.
+      Array.from(links).forEach((link) => {
+        const image = link.getElementsByTagName('img')[0]
+        link.style.height = image.height
+        link.style.width = image.width
+      })
+
       const instance = Bricks({
         container: '#books',
         packed: 'data-packed',
@@ -38,10 +48,12 @@ layout: book-list
   {% set bookslist = collections.books %}
 
   {% for book in bookslist | reverse %}
-    {% if book.data.isbn %}
-      <img class="grid-item" alt="{{ book.data.title }} book cover"  title="{{ book.data.title }}" src="https://covers.openlibrary.org/b/isbn/{{ book.data.isbn }}-L.jpg">
-    {% else %}
-      <img class="grid-item" alt="{{ book.data.title }} book cover" title="{{ book.data.title }}" src="{{ book.data.coverUrl }}">
-    {% endif %}
-  {% endfor %}
+    <a href="{{ book.url | url }}" class="text-indigo-500 font-bold text-lg w-fit h-fit book-link">
+      {% if book.data.isbn %}
+        <img alt="{{ book.data.title }} book cover"  title="{{ book.data.title }}" src="https://covers.openlibrary.org/b/isbn/{{ book.data.isbn }}-L.jpg">
+      {% else %}
+        <img alt="{{ book.data.title }} book cover" title="{{ book.data.title }}" src="{{ book.data.coverUrl }}">
+      {% endif %}
+    {% endfor %}
+    </a>
 </section>

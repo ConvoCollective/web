@@ -80,6 +80,7 @@ body pre[class*="language-"] {
 /* Book covers */
 .cover-list a, img {
   width: 200px;
+  display: block;
 }
 
 /* Link previews */
