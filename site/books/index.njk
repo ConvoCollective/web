@@ -2,22 +2,46 @@
 layout: book-list
 ---
 
-<section class="mt-15 grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+<script type="text/javascript">
+  // initialize Masonry after all images have loaded
+  window.addEventListener('DOMContentLoaded', () => {
+
+    Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => {
+      img.onload = img.onerror = resolve;
+    }))).then(() => {
+      const instance = Bricks({
+        container: '#books',
+        packed: 'data-packed',
+        sizes: [
+          {
+            columns: 2,
+            gutter: 10
+          },
+          {
+            mq: '768px',
+            columns: 3,
+            gutter: 25
+          },
+          {
+            mq: '1024px',
+            columns: 4,
+            gutter: 50
+          }
+        ]
+      }).pack()
+      console.log('packed')
+    });
+  });
+</script>
+
+<section id="books" class="mt-15 cover-list">
   {% set bookslist = collections.books %}
 
   {% for book in bookslist | reverse %}
-    {% if book.data.title %}
-      <article class="grid-item">
-        {% if book.data.title %}
-          <a href="{{ book.url | url }}" class="text-indigo-500 font-bold text-lg">
-            {% if book.data.isbn %}
-              <img alt="{{ book.data.title }} book cover"  title="{{ book.data.title }}" src="https://covers.openlibrary.org/b/isbn/{{ book.data.isbn }}-L.jpg" class="float-left pr-8 pb-8" width="200">
-            {% else %}
-              <img alt="{{ book.data.title }} book cover" title="{{ book.data.title }}" src="{{ book.data.coverUrl }}" class="float-left pr-8 pb-8" width="200">
-            {% endif %}
-          </a>
-        {% endif %}
-      </article>
+    {% if book.data.isbn %}
+      <img class="grid-item" alt="{{ book.data.title }} book cover"  title="{{ book.data.title }}" src="https://covers.openlibrary.org/b/isbn/{{ book.data.isbn }}-L.jpg">
+    {% else %}
+      <img class="grid-item" alt="{{ book.data.title }} book cover" title="{{ book.data.title }}" src="{{ book.data.coverUrl }}">
     {% endif %}
   {% endfor %}
 </section>

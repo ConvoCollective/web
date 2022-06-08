@@ -77,6 +77,11 @@ body pre[class*="language-"] {
   @apply bg-gray-800;
 }
 
+/* Book covers */
+.cover-list a, img {
+  width: 200px;
+}
+
 /* Link previews */
 .link-preview-widget
 {
