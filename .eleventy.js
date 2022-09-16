@@ -73,7 +73,7 @@ module.exports = function (eleventyConfig) {
   // TODO: Switch the use of this constant in the footer to this configuration
   //   variable once 11ty hits 1.0
   // eleventyConfig.addGlobalData('githubRepo', 'ConvoCollective/conversational-ai-guide')
-
+  eleventyConfig.addWatchTarget('guide')
   eleventyConfig.ignores.add("_site/terms/*.md");
 
   eleventyConfig.addNunjucksAsyncFilter("linkPreview", linkPreview);

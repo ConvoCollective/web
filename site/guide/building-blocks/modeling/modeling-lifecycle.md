@@ -11,7 +11,7 @@ tags:
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.5.4/jquery.imagemapster.min.js" referrerpolicy="no-referrer"></script>
 
-<img src='/static/img/modeling-lifecycle.png' usemap="#image-map"></img>
+<img src='/static/img/modeling-lifecycle.png' usemap="#image-map" style="width:100%"></img>
 <map name="image-map">
     <area target="" alt="" title="" href="/guide/building-blocks/modeling/collecting-data" coords="24,362,838,908" shape="rect">
     <area target="" alt="" title="" href="/guide/building-blocks/modeling/measuring-accuracy" coords="857,24,1621,514" shape="rect">

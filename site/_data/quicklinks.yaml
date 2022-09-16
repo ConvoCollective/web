@@ -14,8 +14,8 @@ links:
 
   - title: Lifecycle
     image: /static/img/Lifecycle.png
-    url: "/guide/building-blocks/modeling/modeling-lifecycle"
-    desc: The lifecycle for building a Conversational system
+    url: "/guide/playbook/playbook"
+    desc: The playbook for building a Conversational application
     links:
       - url: /guide/building-blocks/modeling/collecting-data
         name: Collect
