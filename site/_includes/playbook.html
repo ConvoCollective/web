@@ -1,0 +1,21 @@
+---
+title: Playbook
+layout: default
+prism: true
+---
+
+<div class="flex">
+  
+  <div class="flex-1">
+    <div class="container max-w-4xl px-6">
+      <div class="pb-5 mb-5 border-b border-gray-100">
+        <h1 class="font-bold text-5xl">{{title}}</h1>
+        <p class="text-center text-base leading-6 font-medium text-gray-500">
+          {{ topic }}
+        </p>
+      </div>
+      <article class="prose my-4 mx-auto">
+        {{ content | safe }}
+      </article>
+  </div>
+</div>

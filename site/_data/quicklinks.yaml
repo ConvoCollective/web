@@ -12,10 +12,10 @@ links:
       - url: /guide/building-blocks/modeling
         name: Modeling
 
-  - title: Lifecycle
+  - title: Playbook
     image: /static/img/Lifecycle.png
-    url: "/guide/building-blocks/modeling/modeling-lifecycle"
-    desc: The lifecycle for building a Conversational system
+    url: "/guide/playbook/content"
+    desc: The playbook for building a Conversational application
     links:
       - url: /guide/building-blocks/modeling/collecting-data
         name: Collect

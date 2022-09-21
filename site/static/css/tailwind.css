@@ -8,6 +8,10 @@ body {
   font-size: 18px;
 }
 
+img[src*="#wide"] {
+  width:100%;
+}
+
 /* Navbar */
 nav a.join, a.join {
   background-color: rgb(182, 49, 121);
@@ -53,6 +57,10 @@ p {
 
 .glossary p {
   padding-top: 0.5em;
+}
+
+.prose {
+  max-width: 100%;
 }
 
 .prose h1 {
