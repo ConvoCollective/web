@@ -2,7 +2,7 @@
 title: Conversational AI Playbook
 description: Review Competitive Offerings to Know The State-Of-The-Art In The Market
 date: 2022-09-15
-layout: building-block
+layout: playbook
 topic: 💡Research & Strategy
 author: John Kelvie
 tags:
