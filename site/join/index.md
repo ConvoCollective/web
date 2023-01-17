@@ -16,7 +16,6 @@ To take part in the Conversational Collective community:
 
 *  Follow <a href="[https://www.meetup.com/ConvoCollective/](https://www.eventbrite.com/o/conversational-collective-30282612756)" target="_blank">our Eventbrite </a> to find out about upcoming events.
 *  Follow <a href="https://www.meetup.com/ConvoCollective/" target="_blank">our Meetup </a> to find out about upcoming events.
-* <a href="https://forms.clickup.com/f/a3jv0-1300/T0T10650YMZJSZYWKG" target="_blank">Request to join our Slack</a> to chat with other members of the community.
 * <a href="https://www.linkedin.com/groups/12333917/" target="_blank">Request to join our LinkedIn group</a>, especially if you are currently looking for work (we frequently post open jobs there).
 * <a href="https://twitter.com/ConvoCollective/" target="_blank">Follow us on Twitter</a> to stay up to date with the latest announcements.
 
